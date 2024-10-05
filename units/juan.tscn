@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://byhmyttv4hcky"]
+
+[ext_resource type="PackedScene" uid="uid://ck6moboc5utvp" path="res://units/unit.tscn" id="1_k2nqy"]
+[ext_resource type="Texture2D" uid="uid://5unu031gjwsi" path="res://units/juan.png" id="2_mfslp"]
+
+[node name="juan" type="Node2D"]
+
+[node name="unit" parent="." instance=ExtResource("1_k2nqy")]
+
+[node name="Sprite2D" parent="unit" index="0"]
+texture = ExtResource("2_mfslp")
+
+[editable path="unit"]

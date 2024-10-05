@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://fnlqno3kw3v2"]
+
+[ext_resource type="PackedScene" uid="uid://ck6moboc5utvp" path="res://units/unit.tscn" id="1_80q2m"]
+[ext_resource type="Texture2D" uid="uid://bf7m4dcu62n3v" path="res://units/lancerlot.png" id="2_0p1st"]
+
+[node name="lancerlot" type="Node2D"]
+
+[node name="unit" parent="." instance=ExtResource("1_80q2m")]
+
+[node name="Sprite2D" parent="unit" index="0"]
+texture = ExtResource("2_0p1st")
+
+[editable path="unit"]

@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cdc0rghvu68oa"]
+
+[node name="field" type="Node2D"]
+
+[node name="border" type="Sprite2D" parent="."]
+
+[node name="anchor" type="Marker2D" parent="border"]
