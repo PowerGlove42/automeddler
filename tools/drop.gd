@@ -1,31 +1,12 @@
 extends Node2D
 
-enum states{
-	FLOATING,
-	RESTING,
-	HELD,
-}
+var inhabitant:Node = null;
 
-var current_state;
+func get_inhabitant() -> Node2D:
+	return inhabitant;
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	current_state = states.FLOATING;
+func set_inhabitant(newInhabitant:Node):
+	inhabitant = newInhabitant;
 
-func _physics_process(delta: float) -> void:
-	if (current_state == states.FLOATING):
-		pass
-	elif (current_state == states.RESTING):
-		pass
-	elif (current_state == states.HELD):
-		pass
-	else:
-		push_error("state not set");
-
-
-
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func move_out():
+	inhabitant = null;
