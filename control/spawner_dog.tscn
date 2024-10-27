@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dygpcq4y5leqb"]
+
+[ext_resource type="Texture2D" uid="uid://c8dbm3dc3qjp" path="res://units/dog.png" id="1_suy6f"]
+[ext_resource type="Script" path="res://control/spawner.gd" id="1_v7eg7"]
+
+[node name="spawner" type="Button"]
+texture_filter = 1
+offset_right = 8.0
+offset_bottom = 8.0
+icon = ExtResource("1_suy6f")
+script = ExtResource("1_v7eg7")
+path = "res://units/dog.tscn"
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]

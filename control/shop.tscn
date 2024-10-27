@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://drq5nh4oy01jo"]
+
+[ext_resource type="Script" path="res://control/shop.gd" id="1_7fkvn"]
+
+[node name="shop" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 5.0
+offset_top = 114.5
+offset_right = 45.0
+offset_bottom = 154.5
+script = ExtResource("1_7fkvn")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 19.5
+offset_top = 3.0
+offset_right = 155.5
+offset_bottom = 43.0

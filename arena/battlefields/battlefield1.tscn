@@ -1,20 +1,14 @@
-[gd_scene load_steps=20 format=4 uid="uid://cugkn6x520ds7"]
+[gd_scene load_steps=14 format=4 uid="uid://cugkn6x520ds7"]
 
+[ext_resource type="Script" path="res://control/spawner.gd" id="1_afrab"]
 [ext_resource type="PackedScene" uid="uid://bd3fwtx5u7ar4" path="res://arena/field/field_blue.tscn" id="1_u7tbh"]
 [ext_resource type="PackedScene" uid="uid://di6fyv7268x5c" path="res://arena/field/field_green.tscn" id="2_ev6pm"]
-[ext_resource type="Script" path="res://arena/battlefields/button_2.gd" id="3_fn41t"]
 [ext_resource type="PackedScene" uid="uid://ixfhwpa5ttj7" path="res://arena/field/field_red.tscn" id="3_lx4eb"]
 [ext_resource type="PackedScene" uid="uid://c0fiaa1s5gs2l" path="res://units/based.tscn" id="4_t1jdl"]
-[ext_resource type="Texture2D" uid="uid://c8dbm3dc3qjp" path="res://units/dog.png" id="4_x2g5f"]
-[ext_resource type="Script" path="res://arena/battlefields/button_3.gd" id="5_2trst"]
 [ext_resource type="PackedScene" uid="uid://dk5eiqb6587rn" path="res://units/dog.tscn" id="5_nnekr"]
 [ext_resource type="PackedScene" uid="uid://byhmyttv4hcky" path="res://units/juan.tscn" id="6_gmfee"]
-[ext_resource type="Script" path="res://arena/battlefields/button_4.gd" id="7_lp0df"]
 [ext_resource type="PackedScene" uid="uid://fnlqno3kw3v2" path="res://units/lancerlot.tscn" id="7_r4xqd"]
-[ext_resource type="Script" path="res://arena/battlefields/unit_button.gd" id="8_8o1nx"]
-[ext_resource type="Texture2D" uid="uid://bf7m4dcu62n3v" path="res://units/lancerlot.png" id="8_o7dka"]
-[ext_resource type="Texture2D" uid="uid://dei4w7todbei8" path="res://units/based.png" id="9_ku7d2"]
-[ext_resource type="Texture2D" uid="uid://5unu031gjwsi" path="res://units/juan.png" id="9_meetc"]
+[ext_resource type="Script" path="res://control/shop.gd" id="9_dnm44"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_qb3ui"]
 scenes/1/scene = ExtResource("4_t1jdl")
@@ -37,63 +31,27 @@ sources/4 = SubResource("TileSetScenesCollectionSource_of45n")
 texture_filter = 1
 position = Vector2(49, 85)
 scale = Vector2(2, 2)
-
-[node name="Button" type="Button" parent="."]
-offset_left = 173.5
-offset_top = 61.5
-offset_right = 181.5
-offset_bottom = 69.5
-script = ExtResource("8_8o1nx")
-
-[node name="Sprite2D" type="Sprite2D" parent="Button"]
-position = Vector2(4.5, 4.5)
-scale = Vector2(0.34375, 0.375)
-texture = ExtResource("9_ku7d2")
-
-[node name="Button2" type="Button" parent="."]
-offset_left = 174.0
-offset_top = 71.5
-offset_right = 182.0
-offset_bottom = 79.5
-script = ExtResource("3_fn41t")
-
-[node name="Sprite2D" type="Sprite2D" parent="Button2"]
-position = Vector2(4.5, 4.5)
-scale = Vector2(0.34375, 0.375)
-texture = ExtResource("4_x2g5f")
-
-[node name="Button3" type="Button" parent="."]
-offset_left = 186.0
-offset_top = 62.0
-offset_right = 194.0
-offset_bottom = 70.0
-script = ExtResource("5_2trst")
-
-[node name="Sprite2D" type="Sprite2D" parent="Button3"]
-position = Vector2(4.5, 4.5)
-scale = Vector2(0.34375, 0.375)
-texture = ExtResource("9_meetc")
-
-[node name="Button4" type="Button" parent="."]
-offset_left = 186.0
-offset_top = 72.0
-offset_right = 194.0
-offset_bottom = 80.0
-script = ExtResource("7_lp0df")
-
-[node name="Sprite2D" type="Sprite2D" parent="Button4"]
-position = Vector2(4.5, 4.5)
-scale = Vector2(0.34375, 0.375)
-texture = ExtResource("8_o7dka")
+script = ExtResource("1_afrab")
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="."]
 tile_set = SubResource("TileSet_nl6gu")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAAFAAIABAAAAAAAAgAGAAIABAAAAAAAAgADAAIABAAAAAAAAgADAAMABAAAAAAAAgAEAAIABAAAAAAAAgAHAAQABAAAAAAAAwAHAAUABAAAAAAAAwAIAAQABAAAAAAAAwAIAAUABAAAAAAAAwAHAAAABAAAAAAAAwAHAAEABAAAAAAAAwAIAAEABAAAAAAAAwAIAAAABAAAAAAAAwAGAAAABAAAAAAAAQAFAAAABAAAAAAAAQAEAAAABAAAAAAAAQADAAAABAAAAAAAAQADAAEABAAAAAAAAQAEAAEABAAAAAAAAQAFAAEABAAAAAAAAQAGAAEABAAAAAAAAQADAAUABAAAAAAAAQAEAAUABAAAAAAAAQAFAAUABAAAAAAAAQAGAAUABAAAAAAAAQAGAAQABAAAAAAAAQAFAAQABAAAAAAAAQAEAAQABAAAAAAAAQADAAQABAAAAAAAAQAIAAIABAAAAAAAAQAIAAMABAAAAAAAAQAHAAMABAAAAAAAAQAHAAIABAAAAAAAAQAGAAMABAAAAAAAAgAFAAMABAAAAAAAAgAEAAMABAAAAAAAAgABAAgABAAAAAAAAQACAAgABAAAAAAAAQADAAgABAAAAAAAAQAEAAgABAAAAAAAAQAFAAgABAAAAAAAAQAGAAgABAAAAAAAAQAHAAgABAAAAAAAAQAIAAgABAAAAAAAAQAJAAgABAAAAAAAAQAKAAgABAAAAAAAAQALAAgABAAAAAAAAQA=")
+tile_map_data = PackedByteArray("AAAFAAIABAAAAAAAAgAGAAIABAAAAAAAAgADAAIABAAAAAAAAgAEAAIABAAAAAAAAgAHAAQABAAAAAAAAwAIAAQABAAAAAAAAwAHAAAABAAAAAAAAwAIAAAABAAAAAAAAwAGAAAABAAAAAAAAQAFAAAABAAAAAAAAQAEAAAABAAAAAAAAQADAAAABAAAAAAAAQAGAAQABAAAAAAAAQAFAAQABAAAAAAAAQAEAAQABAAAAAAAAQADAAQABAAAAAAAAQAIAAIABAAAAAAAAQAHAAIABAAAAAAAAQABAAYABAAAAAAAAQACAAYABAAAAAAAAQADAAYABAAAAAAAAQAEAAYABAAAAAAAAQAFAAYABAAAAAAAAQAGAAYABAAAAAAAAQAHAAYABAAAAAAAAQAIAAYABAAAAAAAAQAJAAYABAAAAAAAAQAKAAYABAAAAAAAAQALAAYABAAAAAAAAQAGAAMABAAAAAAAAQAFAAMABAAAAAAAAQAEAAMABAAAAAAAAQADAAMABAAAAAAAAQAIAAEABAAAAAAAAQAHAAEABAAAAAAAAQAGAP//BAAAAAAAAQAFAP//BAAAAAAAAQAEAP//BAAAAAAAAQADAP//BAAAAAAAAQAGAAEABAAAAAAAAgAFAAEABAAAAAAAAgAEAAEABAAAAAAAAgADAAEABAAAAAAAAgAIAAMABAAAAAAAAwAHAAMABAAAAAAAAwAHAP//BAAAAAAAAwAIAP//BAAAAAAAAwA=")
 tile_set = SubResource("TileSet_1f0c8")
 
-[connection signal="button_down" from="Button" to="Button" method="_on_button_down"]
-[connection signal="button_down" from="Button2" to="Button2" method="_on_button_down"]
-[connection signal="button_down" from="Button3" to="Button3" method="_on_button_down"]
-[connection signal="button_down" from="Button4" to="Button4" method="_on_button_down"]
+[node name="shop" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 5.0
+offset_top = 114.5
+offset_right = 45.0
+offset_bottom = 154.5
+script = ExtResource("9_dnm44")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="shop"]
+layout_mode = 0
+offset_left = 19.5
+offset_top = 3.0
+offset_right = 155.5
+offset_bottom = 43.0

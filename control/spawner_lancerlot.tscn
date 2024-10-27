@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1knvom62cb08"]
+
+[ext_resource type="Script" path="res://control/spawner.gd" id="1_llpek"]
+[ext_resource type="Texture2D" uid="uid://bf7m4dcu62n3v" path="res://units/lancerlot.png" id="1_xiytd"]
+
+[node name="spawner" type="Button"]
+texture_filter = 1
+offset_right = 8.0
+offset_bottom = 8.0
+icon = ExtResource("1_xiytd")
+script = ExtResource("1_llpek")
+path = "res://units/lancerlot.tscn"
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]
