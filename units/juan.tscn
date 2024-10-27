@@ -11,3 +11,4 @@
 texture = ExtResource("2_mfslp")
 
 [editable path="unit"]
+[editable path="unit/drag"]

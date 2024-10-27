@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://tools/drop.gd" id="1_doq44"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nu76a"]
+size = Vector2(4.5, 4.5)
 
 [node name="drop" type="Node2D" groups=["drop"]]
 script = ExtResource("1_doq44")

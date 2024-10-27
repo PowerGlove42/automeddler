@@ -1,9 +1,25 @@
-[gd_scene format=3 uid="uid://ck6moboc5utvp"]
+[gd_scene load_steps=4 format=3 uid="uid://ck6moboc5utvp"]
+
+[ext_resource type="Script" path="res://units/unit.gd" id="1_b5ihy"]
+[ext_resource type="PackedScene" uid="uid://bdis4c2xfx62w" path="res://tools/drag.tscn" id="1_gcx7b"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eh57c"]
+radius = 6.0
+height = 14.0
 
 [node name="unit" type="Node2D"]
+script = ExtResource("1_b5ihy")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(0, -4)
 
 [node name="Marker2D" type="Marker2D" parent="."]
+
+[node name="drag" parent="." instance=ExtResource("1_gcx7b")]
+
+[node name="CollisionShape2D" parent="drag/Area2D" index="0"]
+position = Vector2(0, -4)
+shape = SubResource("CapsuleShape2D_eh57c")
+
+[editable path="drag"]
