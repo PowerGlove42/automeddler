@@ -23,6 +23,7 @@ window/stretch/mode="canvas_items"
 [global_group]
 
 drop="drop section of drag&drop"
+remove_on_shop_refresh="spawns nodes"
 
 [input]
 

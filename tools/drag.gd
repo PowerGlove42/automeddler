@@ -16,6 +16,8 @@ var parent;
 @onready var shape = $Area2D/CollisionShape2D;
 
 func _ready() -> void:
+	if home != null:
+		home.move_out();
 	parent = get_parent();
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		current_state = states.HELD;
@@ -69,9 +71,8 @@ func set_new_home():
 		partner = target.get_inhabitant();
 	else:
 		push_warning("target not found");
-	if partner:
+	if partner != null:
 		partner.rehome(home);
-
 	rehome(target);
 
 func find_next_home() -> Node:
@@ -92,9 +93,6 @@ func find_next_home() -> Node:
 					target = i;
 	return target
 
-
-
-
 func rehome(target: Node2D) -> void:
 	home = target;
 	current_state = states.FLOATING;
@@ -102,3 +100,7 @@ func rehome(target: Node2D) -> void:
 		home.set_inhabitant(self);
 	else:
 		push_warning("home is not set!");
+
+func clean():
+	if home != null:
+		home.move_out()

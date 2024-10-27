@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://dk5eiqb6587rn"]
+[gd_scene load_steps=4 format=3 uid="uid://dk5eiqb6587rn"]
 
+[ext_resource type="Script" path="res://units/dog.gd" id="1_mcvt1"]
 [ext_resource type="PackedScene" uid="uid://ck6moboc5utvp" path="res://units/unit.tscn" id="1_wuejy"]
 [ext_resource type="Texture2D" uid="uid://c8dbm3dc3qjp" path="res://units/dog.png" id="2_pny17"]
 
 [node name="dog" type="Node2D"]
+script = ExtResource("1_mcvt1")
 
 [node name="unit" parent="." instance=ExtResource("1_wuejy")]
 
@@ -11,3 +13,4 @@
 texture = ExtResource("2_pny17")
 
 [editable path="unit"]
+[editable path="unit/drag"]

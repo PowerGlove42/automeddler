@@ -5,6 +5,9 @@ extends Node
 var entity;
 
 func _on_button_down() -> void:
+	spawn();
+
+func spawn():
 	entity = load(path);
 	if not anchor:
 		anchor = get_parent();

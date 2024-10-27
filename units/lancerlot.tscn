@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://fnlqno3kw3v2"]
+[gd_scene load_steps=4 format=3 uid="uid://fnlqno3kw3v2"]
 
 [ext_resource type="PackedScene" uid="uid://ck6moboc5utvp" path="res://units/unit.tscn" id="1_80q2m"]
+[ext_resource type="Script" path="res://units/lancerlot.gd" id="1_ms20i"]
 [ext_resource type="Texture2D" uid="uid://bf7m4dcu62n3v" path="res://units/lancerlot.png" id="2_0p1st"]
 
 [node name="lancerlot" type="Node2D"]
+script = ExtResource("1_ms20i")
 
 [node name="unit" parent="." instance=ExtResource("1_80q2m")]
 
@@ -11,3 +13,4 @@
 texture = ExtResource("2_0p1st")
 
 [editable path="unit"]
+[editable path="unit/drag"]

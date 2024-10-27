@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://c8dbm3dc3qjp" path="res://units/dog.png" id="1_suy6f"]
 [ext_resource type="Script" path="res://control/spawner.gd" id="1_v7eg7"]
 
-[node name="spawner" type="Button"]
+[node name="spawner" type="Button" groups=["remove_on_shop_refresh"]]
 texture_filter = 1
 offset_right = 8.0
 offset_bottom = 8.0

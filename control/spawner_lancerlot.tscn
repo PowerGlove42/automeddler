@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://control/spawner.gd" id="1_llpek"]
 [ext_resource type="Texture2D" uid="uid://bf7m4dcu62n3v" path="res://units/lancerlot.png" id="1_xiytd"]
 
-[node name="spawner" type="Button"]
+[node name="spawner" type="Button" groups=["remove_on_shop_refresh"]]
 texture_filter = 1
 offset_right = 8.0
 offset_bottom = 8.0
