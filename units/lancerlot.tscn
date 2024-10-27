@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bf7m4dcu62n3v" path="res://units/lancerlot.png" id="2_0p1st"]
 
 [node name="lancerlot" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_ms20i")
 
 [node name="unit" parent="." instance=ExtResource("1_80q2m")]

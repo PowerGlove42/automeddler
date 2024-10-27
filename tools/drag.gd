@@ -79,19 +79,20 @@ func find_next_home() -> Node:
 	var target:Node2D = home;
 	var distance = 9999999999;
 	var areas = area2d.get_overlapping_areas();
-	if areas.size() > 0:
-		for i in area2d.get_overlapping_areas():
-			if (i.global_position - global_position).length() < distance:
-				distance = (i.global_position - global_position).length();
-				target = i.get_parent();
-		return target
-	elif target == null:
+	if target == null:
 		for i in get_tree().get_nodes_in_group("drop"):
 			if i.empty:
 				if (i.global_position - global_position).length() < distance:
 					distance = (i.global_position - global_position).length();
 					target = i;
-	return target
+		return target
+	if areas.size() > 0:
+		for i in area2d.get_overlapping_areas():
+			if (i.global_position - global_position).length() < distance:
+				distance = (i.global_position - global_position).length();
+				target = i.get_parent();
+	return target;
+
 
 func rehome(target: Node2D) -> void:
 	home = target;

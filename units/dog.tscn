@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://c8dbm3dc3qjp" path="res://units/dog.png" id="2_pny17"]
 
 [node name="dog" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_mcvt1")
 
 [node name="unit" parent="." instance=ExtResource("1_wuejy")]

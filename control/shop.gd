@@ -12,12 +12,12 @@ func _ready() -> void:
 	if not anchor:
 		anchor = get_parent();
 	for i in range(0, 5, 1):
-		var rand = randi_range(0, 0);
+		var rand = randi_range(0, 3);
 		var offer;
 		var offer_button
 		match rand:
 			0:
-				offer = load(juan);
+				offer = load(juan);  
 			1:
 				offer = load(dog);
 			2:

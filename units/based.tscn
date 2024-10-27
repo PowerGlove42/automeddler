@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dei4w7todbei8" path="res://units/based.png" id="2_f28bw"]
 
 [node name="based" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_kan8q")
 
 [node name="unit" parent="." instance=ExtResource("1_yixbe")]
