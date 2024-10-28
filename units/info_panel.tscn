@@ -1,0 +1,71 @@
+[gd_scene load_steps=6 format=3 uid="uid://do5n0pjc3q8yl"]
+
+[ext_resource type="Texture2D" uid="uid://bgdlsvo01baaw" path="res://units/infobox.png" id="1_1r705"]
+[ext_resource type="Texture2D" uid="uid://bkim5u54ht1l3" path="res://units/wizard.png" id="2_wasjt"]
+[ext_resource type="Texture2D" uid="uid://bkvm5houbbqn6" path="res://units/ranged.png" id="3_jd0re"]
+[ext_resource type="Texture2D" uid="uid://bycjgnspgelrm" path="res://units/warrior.png" id="4_7yyu7"]
+[ext_resource type="Texture2D" uid="uid://wexlgkjrwjf6" path="res://units/melee.png" id="5_qx2ts"]
+
+[node name="info_panel" type="Node2D"]
+texture_filter = 1
+position = Vector2(-29, -45)
+scale = Vector2(1.5, 1.5)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 64.0
+texture = ExtResource("1_1r705")
+
+[node name="HFlowContainer" type="HFlowContainer" parent="."]
+offset_left = 4.0
+offset_top = 3.0
+offset_right = 36.0
+offset_bottom = 29.0
+
+[node name="TextureRect4" type="TextureRect" parent="HFlowContainer"]
+layout_mode = 2
+texture = ExtResource("2_wasjt")
+
+[node name="TextureRect2" type="TextureRect" parent="HFlowContainer"]
+layout_mode = 2
+texture = ExtResource("3_jd0re")
+
+[node name="TextureRect3" type="TextureRect" parent="HFlowContainer"]
+layout_mode = 2
+texture = ExtResource("4_7yyu7")
+
+[node name="TextureRect" type="TextureRect" parent="HFlowContainer"]
+layout_mode = 2
+texture = ExtResource("5_qx2ts")
+
+[node name="text" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 3.0
+anchor_top = 33.0
+anchor_right = 217.0
+anchor_bottom = 222.0
+offset_left = 3.0
+offset_top = 32.0
+offset_right = 229.0
+offset_bottom = 165.0
+scale = Vector2(0.15, 0.15)
+text = "juan leaps onto the furthest enemy stunning it and dealing damage equal to 50% of it's current HP
+"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="hp" type="Label" parent="."]
+offset_left = 18.6667
+offset_top = 54.0
+offset_right = 37.6667
+offset_bottom = 77.0
+scale = Vector2(0.3, 0.3)
+text = "10"
+
+[node name="attack" type="Label" parent="."]
+offset_left = 12.0
+offset_top = 54.0
+offset_right = 52.0
+offset_bottom = 77.0
+scale = Vector2(0.3, 0.3)
+text = "10"

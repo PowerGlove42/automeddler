@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://ck6moboc5utvp"]
+[gd_scene load_steps=6 format=3 uid="uid://ck6moboc5utvp"]
 
 [ext_resource type="Script" path="res://units/unit.gd" id="1_b5ihy"]
 [ext_resource type="PackedScene" uid="uid://bdis4c2xfx62w" path="res://tools/drag.tscn" id="1_gcx7b"]
 [ext_resource type="Texture2D" uid="uid://cfv3wp7xajfdu" path="res://units/stars1.png" id="3_0bvpa"]
+[ext_resource type="PackedScene" uid="uid://do5n0pjc3q8yl" path="res://units/info_panel.tscn" id="4_g8xvg"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eh57c"]
 radius = 6.0
@@ -28,4 +29,18 @@ position = Vector2(0, -2)
 texture = ExtResource("3_0bvpa")
 hframes = 3
 
+[node name="info_panel" parent="." instance=ExtResource("4_g8xvg")]
+visible = false
+position = Vector2(-29, -79)
+
+[node name="RichTextLabel" parent="info_panel" index="2"]
+offset_top = 33.0
+offset_right = 221.0
+offset_bottom = 217.0
+text = ""
+
+[connection signal="input_event" from="drag/Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_exited" from="drag/Area2D" to="." method="_on_area_2d_mouse_exited"]
+
 [editable path="drag"]
+[editable path="info_panel"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkvm5houbbqn6"
-path="res://.godot/imported/ranged.png-a90906c2ac99d48d801be514410c38af.ctex"
+uid="uid://wexlgkjrwjf6"
+path="res://.godot/imported/melee.png-c1db8ae06664a9d9bdd8d7e3a2f9ab1f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://control/ranged.png"
-dest_files=["res://.godot/imported/ranged.png-a90906c2ac99d48d801be514410c38af.ctex"]
+source_file="res://units/melee.png"
+dest_files=["res://.godot/imported/melee.png-c1db8ae06664a9d9bdd8d7e3a2f9ab1f.ctex"]
 
 [params]
 

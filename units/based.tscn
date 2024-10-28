@@ -15,3 +15,4 @@ texture = ExtResource("2_f28bw")
 
 [editable path="unit"]
 [editable path="unit/drag"]
+[editable path="unit/info_panel"]
