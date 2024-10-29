@@ -1,29 +1,22 @@
 extends Node2D
+var wizard = "res://units/traits/wizard.tscn";
+var warrior = "res://units/traits/warrior.tscn";
 @onready var hp = $hp;
 @onready var attack = $attack;
-@onready var wizard = $HFlowContainer/wizard;
-@onready var warrior = $HFlowContainer/warrior;
-@onready var ranged = $HFlowContainer/ranged;
-@onready var melee = $HFlowContainer/melee;
+@onready var hflow = $HFlowContainer;
+@onready var text = $text;
 
-func update(hp:int, attack:int, classes:Array):
-	self.hp.text = hp;
-	self.attack.text = attack;
-	match classes:
-		"wizard":
-			self.wizard.visible = true;
-		"warrior":
-			self.warrior.visile = true;
-		"ranged":
-			self.ranged.visible = true;
-		"melee":
-			self.melee.visible = true;
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	update(3,4,"this unit does nothing",[wizard, warrior]);
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func update(hp:int, attack:int, text:String, classes:Array):
+	self.hp.text = str(hp);
+	self.attack.text = str(attack);
+	self.text.text = text;
+	for i in hflow.get_children():
+		i.call_deferred("queue free");
+	for i in classes:
+		var instance = load(i);
+		instance = instance.instantiate();
+		hflow.add_child(instance);
