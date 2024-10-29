@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://ct43d32th3hyx"]
 
-[ext_resource type="Texture2D" uid="uid://5unu031gjwsi" path="res://units/juan.png" id="1_58pk1"]
+[ext_resource type="Texture2D" uid="uid://5unu031gjwsi" path="res://units/specific/sprite/juan.png" id="1_58pk1"]
 [ext_resource type="Script" path="res://control/spawner.gd" id="1_i5wy0"]
 
 [node name="spawner" type="Button" groups=["remove_on_shop_refresh"]]
@@ -9,6 +9,6 @@ offset_right = 8.0
 offset_bottom = 8.0
 icon = ExtResource("1_58pk1")
 script = ExtResource("1_i5wy0")
-path = "res://units/juan.tscn"
+path = "res://units/specific/scene/juan.tscn"
 
 [connection signal="button_down" from="." to="." method="_on_button_down"]

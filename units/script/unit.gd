@@ -10,9 +10,10 @@ enum level {
 @onready var info_panel = $info_panel;
 #stats to update
 var current_level = level.ONE
-@export var attack:int = 0;
-@export var hp:int = 0;
-@export var text:String = "";
+#@export var attack:int = 0;
+@export var attack:Array [int];
+@export var hp:Array [int];
+@export var text:Array[String];
 @export var traits:Array[PackedScene];
 
 func _ready() -> void:
@@ -20,7 +21,7 @@ func _ready() -> void:
 	update_info();
 
 func update_info():
-	info_panel.update(hp, attack, current_level+1, text, traits);
+	info_panel.update(hp[current_level], attack[current_level], current_level+1, text[current_level], traits);
 
 func goodbye():
 	drag.call_deferred("clean")

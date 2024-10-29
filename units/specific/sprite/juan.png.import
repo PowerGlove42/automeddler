@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dei4w7todbei8"
-path="res://.godot/imported/based.png-88deb787c50581cb066fe102a2e60a09.ctex"
+uid="uid://5unu031gjwsi"
+path="res://.godot/imported/juan.png-d7810d8330c4d34f65569480792c7177.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://units/based.png"
-dest_files=["res://.godot/imported/based.png-88deb787c50581cb066fe102a2e60a09.ctex"]
+source_file="res://units/specific/sprite/juan.png"
+dest_files=["res://.godot/imported/juan.png-d7810d8330c4d34f65569480792c7177.ctex"]
 
 [params]
 

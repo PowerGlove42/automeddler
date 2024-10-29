@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jhdy224nvbcd"
-path="res://.godot/imported/finger.png-0ee332a360b4f1e12f558f69ff799f22.ctex"
+uid="uid://dei4w7todbei8"
+path="res://.godot/imported/based.png-b5fa2a42e9694e6eabde27d1a0135890.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://units/finger.png"
-dest_files=["res://.godot/imported/finger.png-0ee332a360b4f1e12f558f69ff799f22.ctex"]
+source_file="res://units/specific/sprite/based.png"
+dest_files=["res://.godot/imported/based.png-b5fa2a42e9694e6eabde27d1a0135890.ctex"]
 
 [params]
 

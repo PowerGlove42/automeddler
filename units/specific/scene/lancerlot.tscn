@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://fnlqno3kw3v2"]
 
-[ext_resource type="PackedScene" uid="uid://ck6moboc5utvp" path="res://units/unit.tscn" id="1_80q2m"]
-[ext_resource type="Script" path="res://units/lancerlot.gd" id="1_ms20i"]
-[ext_resource type="Texture2D" uid="uid://bf7m4dcu62n3v" path="res://units/lancerlot.png" id="2_0p1st"]
+[ext_resource type="PackedScene" uid="uid://ck6moboc5utvp" path="res://units/scene/unit.tscn" id="1_80q2m"]
+[ext_resource type="Script" path="res://units/specific/script/lancerlot.gd" id="1_ms20i"]
+[ext_resource type="Texture2D" uid="uid://bf7m4dcu62n3v" path="res://units/specific/sprite/lancerlot.png" id="2_0p1st"]
 [ext_resource type="PackedScene" uid="uid://c3ty3cg0p46qs" path="res://units/traits/melee.tscn" id="3_ewfim"]
 [ext_resource type="PackedScene" uid="uid://dreyq42dvw6a6" path="res://units/traits/warrior.tscn" id="4_5y7ek"]
 
@@ -11,9 +11,9 @@ y_sort_enabled = true
 script = ExtResource("1_ms20i")
 
 [node name="unit" parent="." instance=ExtResource("1_80q2m")]
-attack = 15
-hp = 40
-text = "idk what he does"
+attack = Array[int]([5, 15, 50])
+hp = Array[int]([50, 100, 150])
+text = Array[String](["level1", "level2", "level3"])
 traits = Array[PackedScene]([ExtResource("3_ewfim"), ExtResource("4_5y7ek")])
 
 [node name="Sprite2D" parent="unit" index="0"]

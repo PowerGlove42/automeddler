@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://dk5eiqb6587rn"]
 
-[ext_resource type="Script" path="res://units/dog.gd" id="1_mcvt1"]
-[ext_resource type="PackedScene" uid="uid://ck6moboc5utvp" path="res://units/unit.tscn" id="1_wuejy"]
-[ext_resource type="Texture2D" uid="uid://c8dbm3dc3qjp" path="res://units/dog.png" id="2_pny17"]
+[ext_resource type="Script" path="res://units/specific/script/dog.gd" id="1_mcvt1"]
+[ext_resource type="PackedScene" uid="uid://ck6moboc5utvp" path="res://units/scene/unit.tscn" id="1_wuejy"]
+[ext_resource type="Texture2D" uid="uid://c8dbm3dc3qjp" path="res://units/specific/sprite/dog.png" id="2_pny17"]
 [ext_resource type="PackedScene" uid="uid://cm6xk73axqi4x" path="res://units/traits/ranged.tscn" id="3_k2mpb"]
 [ext_resource type="PackedScene" uid="uid://dreyq42dvw6a6" path="res://units/traits/warrior.tscn" id="4_560cj"]
 

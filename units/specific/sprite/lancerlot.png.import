@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfv3wp7xajfdu"
-path="res://.godot/imported/stars1.png-2995a2e54241a9c731b9e35f2cf1398a.ctex"
+uid="uid://bf7m4dcu62n3v"
+path="res://.godot/imported/lancerlot.png-ca69a23f1006d45bf9339fda71d23c0f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://units/stars1.png"
-dest_files=["res://.godot/imported/stars1.png-2995a2e54241a9c731b9e35f2cf1398a.ctex"]
+source_file="res://units/specific/sprite/lancerlot.png"
+dest_files=["res://.godot/imported/lancerlot.png-ca69a23f1006d45bf9339fda71d23c0f.ctex"]
 
 [params]
 

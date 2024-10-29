@@ -1,19 +1,19 @@
 [gd_scene load_steps=3 format=3 uid="uid://do5n0pjc3q8yl"]
 
-[ext_resource type="Texture2D" uid="uid://bgdlsvo01baaw" path="res://units/infobox.png" id="1_1r705"]
-[ext_resource type="Script" path="res://units/info_panel.gd" id="1_ehqt6"]
+[ext_resource type="Script" path="res://units/script/info_panel.gd" id="1_axv85"]
+[ext_resource type="Texture2D" uid="uid://bgdlsvo01baaw" path="res://units/sprite/infobox.png" id="2_5em8u"]
 
 [node name="info_panel" type="Node2D"]
 z_index = 2
 texture_filter = 1
 position = Vector2(-29, -45)
 scale = Vector2(1.5, 1.5)
-script = ExtResource("1_ehqt6")
+script = ExtResource("1_axv85")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 40.0
 offset_bottom = 64.0
-texture = ExtResource("1_1r705")
+texture = ExtResource("2_5em8u")
 
 [node name="HFlowContainer" type="HFlowContainer" parent="."]
 offset_left = 4.0
