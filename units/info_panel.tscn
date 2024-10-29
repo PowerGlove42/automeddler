@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://do5n0pjc3q8yl"]
+[gd_scene load_steps=7 format=3 uid="uid://do5n0pjc3q8yl"]
 
 [ext_resource type="Texture2D" uid="uid://bgdlsvo01baaw" path="res://units/infobox.png" id="1_1r705"]
+[ext_resource type="Script" path="res://units/info_panel.gd" id="1_ehqt6"]
 [ext_resource type="Texture2D" uid="uid://bkim5u54ht1l3" path="res://units/wizard.png" id="2_wasjt"]
 [ext_resource type="Texture2D" uid="uid://bkvm5houbbqn6" path="res://units/ranged.png" id="3_jd0re"]
 [ext_resource type="Texture2D" uid="uid://bycjgnspgelrm" path="res://units/warrior.png" id="4_7yyu7"]
@@ -10,6 +11,7 @@
 texture_filter = 1
 position = Vector2(-29, -45)
 scale = Vector2(1.5, 1.5)
+script = ExtResource("1_ehqt6")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 40.0
@@ -22,19 +24,19 @@ offset_top = 3.0
 offset_right = 36.0
 offset_bottom = 29.0
 
-[node name="TextureRect4" type="TextureRect" parent="HFlowContainer"]
+[node name="wizard" type="TextureRect" parent="HFlowContainer"]
 layout_mode = 2
 texture = ExtResource("2_wasjt")
 
-[node name="TextureRect2" type="TextureRect" parent="HFlowContainer"]
+[node name="ranged" type="TextureRect" parent="HFlowContainer"]
 layout_mode = 2
 texture = ExtResource("3_jd0re")
 
-[node name="TextureRect3" type="TextureRect" parent="HFlowContainer"]
+[node name="warrior" type="TextureRect" parent="HFlowContainer"]
 layout_mode = 2
 texture = ExtResource("4_7yyu7")
 
-[node name="TextureRect" type="TextureRect" parent="HFlowContainer"]
+[node name="melee" type="TextureRect" parent="HFlowContainer"]
 layout_mode = 2
 texture = ExtResource("5_qx2ts")
 
