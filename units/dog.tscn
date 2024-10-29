@@ -1,17 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://dk5eiqb6587rn"]
+[gd_scene load_steps=6 format=3 uid="uid://dk5eiqb6587rn"]
 
 [ext_resource type="Script" path="res://units/dog.gd" id="1_mcvt1"]
 [ext_resource type="PackedScene" uid="uid://ck6moboc5utvp" path="res://units/unit.tscn" id="1_wuejy"]
 [ext_resource type="Texture2D" uid="uid://c8dbm3dc3qjp" path="res://units/dog.png" id="2_pny17"]
+[ext_resource type="PackedScene" uid="uid://cm6xk73axqi4x" path="res://units/traits/ranged.tscn" id="3_k2mpb"]
+[ext_resource type="PackedScene" uid="uid://dreyq42dvw6a6" path="res://units/traits/warrior.tscn" id="4_560cj"]
 
 [node name="dog" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_mcvt1")
 
 [node name="unit" parent="." instance=ExtResource("1_wuejy")]
+attack = 10
+hp = 30
+text = "he has a do"
+traits = Array[PackedScene]([ExtResource("3_k2mpb"), ExtResource("4_560cj")])
 
 [node name="Sprite2D" parent="unit" index="0"]
 texture = ExtResource("2_pny17")
 
 [editable path="unit"]
 [editable path="unit/drag"]
+[editable path="unit/info_panel"]

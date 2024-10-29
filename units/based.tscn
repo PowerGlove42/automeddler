@@ -12,7 +12,7 @@ script = ExtResource("1_kan8q")
 
 [node name="unit" parent="." instance=ExtResource("1_yixbe")]
 attack = 12
-hp = 13
+hp = 50
 text = "Wow! this unit is ranged and melee at once!"
 traits = Array[PackedScene]([ExtResource("3_fp5tq"), ExtResource("4_4cl48"), ExtResource("5_i85bk")])
 
