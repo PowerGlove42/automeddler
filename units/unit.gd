@@ -8,10 +8,19 @@ enum level {
 @onready var stars = $star;
 @onready var sprite = $Sprite2D;
 @onready var info_panel = $info_panel;
+#stats to update
 var current_level = level.ONE
+@export var attack:int = 0;
+@export var hp:int = 0;
+@export var text:String = "";
+@export var traits:Array[PackedScene];
 
 func _ready() -> void:
 	drag.current_state = drag.states.HELD;
+	update_info();
+
+func update_info():
+	info_panel.update(hp, attack, current_level+1, text, traits);
 
 func goodbye():
 	drag.call_deferred("clean")
@@ -23,10 +32,12 @@ func level_up():
 			sprite.apply_scale(Vector2(1.2, 1.2));
 			current_level = level.TWO;
 			stars.frame = level.TWO;
+			update_info();
 		level.TWO:
 			sprite.apply_scale(Vector2(1.5, 1.5));
 			current_level = level.THREE;
 			stars.frame = level.THREE;
+			update_info();
 		level.THREE:
 			pass
 

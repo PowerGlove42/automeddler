@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkim5u54ht1l3"
-path="res://.godot/imported/wizard.png-c08d090d6b9067739c3523070f1f1f37.ctex"
+uid="uid://bkvm5houbbqn6"
+path="res://.godot/imported/ranged.png-5c3bdcde1c8abf5d98c94afe35a0ae2c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://units/wizard.png"
-dest_files=["res://.godot/imported/wizard.png-c08d090d6b9067739c3523070f1f1f37.ctex"]
+source_file="res://units/traits/ranged.png"
+dest_files=["res://.godot/imported/ranged.png-5c3bdcde1c8abf5d98c94afe35a0ae2c.ctex"]
 
 [params]
 

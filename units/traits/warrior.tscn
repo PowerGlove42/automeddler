@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dreyq42dvw6a6"]
 
-[ext_resource type="Texture2D" uid="uid://bycjgnspgelrm" path="res://units/warrior.png" id="1_8x03t"]
+[ext_resource type="Texture2D" uid="uid://bycjgnspgelrm" path="res://units/traits/warrior.png" id="1_8x03t"]
 
 [node name="warrior" type="TextureRect"]
 texture = ExtResource("1_8x03t")

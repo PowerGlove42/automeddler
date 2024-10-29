@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bycjgnspgelrm"
-path="res://.godot/imported/warrior.png-bfd45c0978a57b0b976327cea8e37439.ctex"
+uid="uid://wexlgkjrwjf6"
+path="res://.godot/imported/melee.png-dbae1f9146d11f280edfb05823c2fb72.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://units/warrior.png"
-dest_files=["res://.godot/imported/warrior.png-bfd45c0978a57b0b976327cea8e37439.ctex"]
+source_file="res://units/traits/melee.png"
+dest_files=["res://.godot/imported/melee.png-dbae1f9146d11f280edfb05823c2fb72.ctex"]
 
 [params]
 

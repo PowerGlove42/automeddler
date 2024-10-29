@@ -1,14 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://c0fiaa1s5gs2l"]
+[gd_scene load_steps=7 format=3 uid="uid://c0fiaa1s5gs2l"]
 
 [ext_resource type="Script" path="res://units/based.gd" id="1_kan8q"]
 [ext_resource type="PackedScene" uid="uid://ck6moboc5utvp" path="res://units/unit.tscn" id="1_yixbe"]
 [ext_resource type="Texture2D" uid="uid://dei4w7todbei8" path="res://units/based.png" id="2_f28bw"]
+[ext_resource type="PackedScene" uid="uid://dreyq42dvw6a6" path="res://units/traits/warrior.tscn" id="3_fp5tq"]
+[ext_resource type="PackedScene" uid="uid://cm6xk73axqi4x" path="res://units/traits/ranged.tscn" id="4_4cl48"]
+[ext_resource type="PackedScene" uid="uid://c3ty3cg0p46qs" path="res://units/traits/melee.tscn" id="5_i85bk"]
 
 [node name="based" type="Node2D"]
-y_sort_enabled = true
 script = ExtResource("1_kan8q")
 
 [node name="unit" parent="." instance=ExtResource("1_yixbe")]
+attack = 12
+hp = 13
+text = "Wow! this unit is ranged and melee at once!"
+traits = Array[PackedScene]([ExtResource("3_fp5tq"), ExtResource("4_4cl48"), ExtResource("5_i85bk")])
 
 [node name="Sprite2D" parent="unit" index="0"]
 texture = ExtResource("2_f28bw")

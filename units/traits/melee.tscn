@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c3ty3cg0p46qs"]
 
-[ext_resource type="Texture2D" uid="uid://wexlgkjrwjf6" path="res://units/melee.png" id="1_hfnxr"]
+[ext_resource type="Texture2D" uid="uid://wexlgkjrwjf6" path="res://units/traits/melee.png" id="1_hfnxr"]
 
 [node name="melee" type="TextureRect"]
 texture = ExtResource("1_hfnxr")

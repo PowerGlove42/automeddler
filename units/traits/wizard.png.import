@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wexlgkjrwjf6"
-path="res://.godot/imported/melee.png-c1db8ae06664a9d9bdd8d7e3a2f9ab1f.ctex"
+uid="uid://bkim5u54ht1l3"
+path="res://.godot/imported/wizard.png-d60288af017cd2ba1d28d64b5d83cb74.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://units/melee.png"
-dest_files=["res://.godot/imported/melee.png-c1db8ae06664a9d9bdd8d7e3a2f9ab1f.ctex"]
+source_file="res://units/traits/wizard.png"
+dest_files=["res://.godot/imported/wizard.png-d60288af017cd2ba1d28d64b5d83cb74.ctex"]
 
 [params]
 

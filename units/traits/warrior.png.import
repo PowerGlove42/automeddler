@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkvm5houbbqn6"
-path="res://.godot/imported/ranged.png-bb714193700c72d69fd7f108f84faa22.ctex"
+uid="uid://bycjgnspgelrm"
+path="res://.godot/imported/warrior.png-d854c7b31f28d68b0f1f347d742ba825.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://units/ranged.png"
-dest_files=["res://.godot/imported/ranged.png-bb714193700c72d69fd7f108f84faa22.ctex"]
+source_file="res://units/traits/warrior.png"
+dest_files=["res://.godot/imported/warrior.png-d854c7b31f28d68b0f1f347d742ba825.ctex"]
 
 [params]
 

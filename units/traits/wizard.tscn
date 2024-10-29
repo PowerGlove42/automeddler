@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b00udf7xlx7te"]
 
-[ext_resource type="Texture2D" uid="uid://bkim5u54ht1l3" path="res://units/wizard.png" id="1_tgs8m"]
+[ext_resource type="Texture2D" uid="uid://bkim5u54ht1l3" path="res://units/traits/wizard.png" id="1_tgs8m"]
 
 [node name="wizard" type="TextureRect"]
 texture = ExtResource("1_tgs8m")

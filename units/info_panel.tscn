@@ -4,6 +4,7 @@
 [ext_resource type="Script" path="res://units/info_panel.gd" id="1_ehqt6"]
 
 [node name="info_panel" type="Node2D"]
+z_index = 2
 texture_filter = 1
 position = Vector2(-29, -45)
 scale = Vector2(1.5, 1.5)
@@ -51,3 +52,11 @@ offset_right = 52.0
 offset_bottom = 77.0
 scale = Vector2(0.3, 0.3)
 text = "10"
+
+[node name="level" type="Label" parent="."]
+offset_left = 31.3333
+offset_top = 23.3333
+offset_right = 71.3333
+offset_bottom = 46.3333
+scale = Vector2(0.3, 0.3)
+text = "2"
