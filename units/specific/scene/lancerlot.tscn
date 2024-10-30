@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://fnlqno3kw3v2"]
+[gd_scene load_steps=8 format=3 uid="uid://fnlqno3kw3v2"]
 
 [ext_resource type="PackedScene" uid="uid://ck6moboc5utvp" path="res://units/generic/scene/unit.tscn" id="1_80q2m"]
 [ext_resource type="Script" path="res://units/specific/script/lancerlot.gd" id="1_ms20i"]
 [ext_resource type="Texture2D" uid="uid://bf7m4dcu62n3v" path="res://units/specific/sprite/lancerlot.png" id="2_0p1st"]
 [ext_resource type="PackedScene" uid="uid://c3ty3cg0p46qs" path="res://units/traits/scene/melee.tscn" id="3_ewfim"]
 [ext_resource type="PackedScene" uid="uid://dreyq42dvw6a6" path="res://units/traits/scene/warrior.tscn" id="4_5y7ek"]
+[ext_resource type="PackedScene" uid="uid://cg8v4c46n5ju0" path="res://units/generic/scene/combat_unit.tscn" id="6_157ua"]
+[ext_resource type="Script" path="res://units/specific/script/combat_unit_lancerlot.gd" id="7_ds6e0"]
 
 [node name="lancerlot" type="Node2D"]
 y_sort_enabled = true
@@ -19,6 +21,20 @@ traits = Array[PackedScene]([ExtResource("3_ewfim"), ExtResource("4_5y7ek")])
 [node name="Sprite2D" parent="unit" index="0"]
 texture = ExtResource("2_0p1st")
 
+[node name="drag" parent="unit" index="2" node_paths=PackedStringArray("anchor")]
+anchor = NodePath("../..")
+
+[node name="combat_unit" parent="." node_paths=PackedStringArray("anchor") instance=ExtResource("6_157ua")]
+script = ExtResource("7_ds6e0")
+anchor = NodePath("..")
+
+[node name="CheckButton" type="CheckButton" parent="."]
+offset_right = 44.0
+offset_bottom = 24.0
+
+[connection signal="toggled" from="CheckButton" to="." method="_on_check_button_toggled"]
+
 [editable path="unit"]
 [editable path="unit/drag"]
 [editable path="unit/info_panel"]
+[editable path="combat_unit"]

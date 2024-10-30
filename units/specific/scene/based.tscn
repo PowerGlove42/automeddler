@@ -19,6 +19,9 @@ traits = Array[PackedScene]([ExtResource("3_fp5tq"), ExtResource("4_4cl48"), Ext
 [node name="Sprite2D" parent="unit" index="0"]
 texture = ExtResource("2_f28bw")
 
+[node name="drag" parent="unit" index="2" node_paths=PackedStringArray("anchor")]
+anchor = NodePath("../..")
+
 [editable path="unit"]
 [editable path="unit/drag"]
 [editable path="unit/info_panel"]

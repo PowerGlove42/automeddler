@@ -16,6 +16,17 @@ var current_level = level.ONE
 @export var text:Array[String];
 @export var traits:Array[PackedScene];
 
+func enable():
+	set_process_internal(true);
+	set_physics_process_internal(true);
+	drag.enable();
+
+
+func disable():
+	set_process_internal(false);
+	set_physics_process_internal(false);
+	drag.disable();
+
 func _ready() -> void:
 	drag.current_state = drag.states.HELD;
 	update_info();

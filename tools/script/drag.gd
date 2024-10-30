@@ -10,6 +10,7 @@ var home: Node2D = null;
 var current_state = states.RESTING;
 var moused_over: bool = false;
 var parent;
+@export var anchor:Node = self;
 
 @onready var marker = $Marker2D;
 @onready var area2d = $Area2D;
@@ -19,6 +20,7 @@ func _ready() -> void:
 	if home != null:
 		home.move_out();
 	parent = get_parent();
+	current_state = states.FLOATING
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		current_state = states.HELD;
 
@@ -27,7 +29,7 @@ func _physics_process(delta: float) -> void:
 	if (current_state == states.FLOATING):
 		if home:
 			move_towards(home.global_position)
-			if global_position == home.global_position:
+			if anchor.global_position == home.global_position:
 				current_state = states.RESTING;
 		else:
 			push_warning("home is not set!");
@@ -40,11 +42,22 @@ func _physics_process(delta: float) -> void:
 	else:
 		push_error("state not set");
 
+func disable():
+	area2d.monitorable = false;
+	area2d.monitoring = false;
+	area2d.input_pickable = false;
+
+func enable():
+	area2d.monitorable = true;
+	area2d.monitoring = true;
+	area2d.input_pickable = true;
+	current_state = states.FLOATING;
+
 func move_towards(location: Vector2) -> void:
-	parent.global_position = lerp(global_position, location, 0.5);
+	anchor.global_position = lerp(anchor.global_position, location, 0.5);
 
 func follow_mouse() -> void:
-	parent.global_position = get_viewport().get_mouse_position();
+	anchor.global_position = get_viewport().get_mouse_position();
 
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event.is_action_pressed("ui_left_mouse") and current_state == states.RESTING:
@@ -82,14 +95,14 @@ func find_next_home() -> Node:
 	if target == null:
 		for i in get_tree().get_nodes_in_group("drop"):
 			if i.empty:
-				if (i.global_position - global_position).length() < distance:
-					distance = (i.global_position - global_position).length();
+				if (i.global_position - anchor.global_position).length() < distance:
+					distance = (i.global_position - anchor.global_position).length();
 					target = i;
 		return target
 	if areas.size() > 0:
 		for i in area2d.get_overlapping_areas():
-			if (i.global_position - global_position).length() < distance:
-				distance = (i.global_position - global_position).length();
+			if (i.global_position - anchor.global_position).length() < distance:
+				distance = (i.global_position - anchor.global_position).length();
 				target = i.get_parent();
 	return target;
 
