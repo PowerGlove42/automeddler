@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cchy6yt6rgnen"]
+
+[ext_resource type="Script" path="res://control/script/spawner.gd" id="1_56thp"]
+[ext_resource type="Texture2D" uid="uid://dei4w7todbei8" path="res://units/specific/sprite/based.png" id="1_oflxd"]
+
+[node name="spawner" type="Button" groups=["remove_on_shop_refresh"]]
+texture_filter = 1
+offset_right = 8.0
+offset_bottom = 8.0
+icon = ExtResource("1_oflxd")
+script = ExtResource("1_56thp")
+path = "res://units/specific/scene/based.tscn"
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]

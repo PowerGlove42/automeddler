@@ -1,0 +1,62 @@
+[gd_scene load_steps=3 format=3 uid="uid://do5n0pjc3q8yl"]
+
+[ext_resource type="Script" path="res://units/generic/script/info_panel.gd" id="1_4pher"]
+[ext_resource type="Texture2D" uid="uid://bgdlsvo01baaw" path="res://units/generic/sprite/infobox.png" id="2_xpqgs"]
+
+[node name="info_panel" type="Node2D"]
+z_index = 2
+texture_filter = 1
+position = Vector2(-29, -45)
+scale = Vector2(1.5, 1.5)
+script = ExtResource("1_4pher")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 64.0
+texture = ExtResource("2_xpqgs")
+
+[node name="HFlowContainer" type="HFlowContainer" parent="."]
+offset_left = 4.0
+offset_top = 3.0
+offset_right = 36.0
+offset_bottom = 29.0
+
+[node name="text" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 3.0
+anchor_top = 33.0
+anchor_right = 217.0
+anchor_bottom = 222.0
+offset_left = 3.0
+offset_top = 32.0
+offset_right = 229.0
+offset_bottom = 165.0
+scale = Vector2(0.15, 0.15)
+text = "juan leaps onto the furthest enemy stunning it and dealing damage equal to 50% of it's current HP
+"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="hp" type="Label" parent="."]
+offset_left = 18.6667
+offset_top = 54.0
+offset_right = 37.6667
+offset_bottom = 77.0
+scale = Vector2(0.3, 0.3)
+text = "10"
+
+[node name="attack" type="Label" parent="."]
+offset_left = 12.0
+offset_top = 54.0
+offset_right = 52.0
+offset_bottom = 77.0
+scale = Vector2(0.3, 0.3)
+text = "10"
+
+[node name="level" type="Label" parent="."]
+offset_left = 31.3333
+offset_top = 23.3333
+offset_right = 71.3333
+offset_bottom = 46.3333
+scale = Vector2(0.3, 0.3)
+text = "2"

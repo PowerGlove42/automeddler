@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://byhmyttv4hcky"]
 
-[ext_resource type="PackedScene" uid="uid://ck6moboc5utvp" path="res://units/scene/unit.tscn" id="1_k2nqy"]
+[ext_resource type="PackedScene" uid="uid://ck6moboc5utvp" path="res://units/generic/scene/unit.tscn" id="1_k2nqy"]
 [ext_resource type="Script" path="res://units/specific/script/juan.gd" id="1_l0y1x"]
 [ext_resource type="Texture2D" uid="uid://5unu031gjwsi" path="res://units/specific/sprite/juan.png" id="2_mfslp"]
-[ext_resource type="PackedScene" uid="uid://c3ty3cg0p46qs" path="res://units/traits/melee.tscn" id="3_ugchl"]
-[ext_resource type="PackedScene" uid="uid://dreyq42dvw6a6" path="res://units/traits/warrior.tscn" id="4_03bxg"]
+[ext_resource type="PackedScene" uid="uid://c3ty3cg0p46qs" path="res://units/traits/scene/melee.tscn" id="3_ugchl"]
+[ext_resource type="PackedScene" uid="uid://dreyq42dvw6a6" path="res://units/traits/scene/warrior.tscn" id="4_03bxg"]
 
 [node name="juan" type="Node2D"]
 y_sort_enabled = true

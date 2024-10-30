@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://fnlqno3kw3v2"]
 
-[ext_resource type="PackedScene" uid="uid://ck6moboc5utvp" path="res://units/scene/unit.tscn" id="1_80q2m"]
+[ext_resource type="PackedScene" uid="uid://ck6moboc5utvp" path="res://units/generic/scene/unit.tscn" id="1_80q2m"]
 [ext_resource type="Script" path="res://units/specific/script/lancerlot.gd" id="1_ms20i"]
 [ext_resource type="Texture2D" uid="uid://bf7m4dcu62n3v" path="res://units/specific/sprite/lancerlot.png" id="2_0p1st"]
-[ext_resource type="PackedScene" uid="uid://c3ty3cg0p46qs" path="res://units/traits/melee.tscn" id="3_ewfim"]
-[ext_resource type="PackedScene" uid="uid://dreyq42dvw6a6" path="res://units/traits/warrior.tscn" id="4_5y7ek"]
+[ext_resource type="PackedScene" uid="uid://c3ty3cg0p46qs" path="res://units/traits/scene/melee.tscn" id="3_ewfim"]
+[ext_resource type="PackedScene" uid="uid://dreyq42dvw6a6" path="res://units/traits/scene/warrior.tscn" id="4_5y7ek"]
 
 [node name="lancerlot" type="Node2D"]
 y_sort_enabled = true

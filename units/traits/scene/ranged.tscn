@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cm6xk73axqi4x"]
+
+[ext_resource type="Texture2D" uid="uid://bkvm5houbbqn6" path="res://units/traits/sprite/ranged.png" id="1_uo5fc"]
+
+[node name="ranged" type="TextureRect"]
+texture = ExtResource("1_uo5fc")

@@ -1,0 +1,63 @@
+[gd_scene load_steps=16 format=4 uid="uid://cugkn6x520ds7"]
+
+[ext_resource type="Script" path="res://control/script/spawner.gd" id="1_m44g4"]
+[ext_resource type="PackedScene" uid="uid://dhtbesvuws2qk" path="res://control/scene/sell.tscn" id="2_qnw8a"]
+[ext_resource type="PackedScene" uid="uid://c0fiaa1s5gs2l" path="res://units/specific/scene/based.tscn" id="3_qgc2b"]
+[ext_resource type="PackedScene" uid="uid://dk5eiqb6587rn" path="res://units/specific/scene/dog.tscn" id="4_gs00y"]
+[ext_resource type="PackedScene" uid="uid://byhmyttv4hcky" path="res://units/specific/scene/juan.tscn" id="5_yv4kl"]
+[ext_resource type="PackedScene" uid="uid://fnlqno3kw3v2" path="res://units/specific/scene/lancerlot.tscn" id="6_tisqi"]
+[ext_resource type="PackedScene" uid="uid://bd3fwtx5u7ar4" path="res://arena/field/scene/field_blue.tscn" id="7_v8e52"]
+[ext_resource type="PackedScene" uid="uid://di6fyv7268x5c" path="res://arena/field/scene/field_green.tscn" id="8_c6fvl"]
+[ext_resource type="PackedScene" uid="uid://ixfhwpa5ttj7" path="res://arena/field/scene/field_red.tscn" id="9_rln44"]
+[ext_resource type="PackedScene" uid="uid://drq5nh4oy01jo" path="res://control/scene/shop.tscn" id="10_i40h0"]
+[ext_resource type="Script" path="res://arena/battlefields/script/units.gd" id="11_2rdap"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_qb3ui"]
+scenes/1/scene = ExtResource("3_qgc2b")
+scenes/2/scene = ExtResource("4_gs00y")
+scenes/3/scene = ExtResource("5_yv4kl")
+scenes/4/scene = ExtResource("6_tisqi")
+
+[sub_resource type="TileSet" id="TileSet_nl6gu"]
+sources/0 = SubResource("TileSetScenesCollectionSource_qb3ui")
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_of45n"]
+scenes/1/scene = ExtResource("7_v8e52")
+scenes/2/scene = ExtResource("8_c6fvl")
+scenes/3/scene = ExtResource("9_rln44")
+
+[sub_resource type="TileSet" id="TileSet_1f0c8"]
+sources/4 = SubResource("TileSetScenesCollectionSource_of45n")
+
+[node name="prepfield" type="Node2D"]
+texture_filter = 1
+position = Vector2(49, 85)
+scale = Vector2(2, 2)
+script = ExtResource("1_m44g4")
+
+[node name="sell" parent="." instance=ExtResource("2_qnw8a")]
+position = Vector2(235, 31)
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="."]
+tile_set = SubResource("TileSet_nl6gu")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAABAAYABAAAAAAAAQACAAYABAAAAAAAAQADAAYABAAAAAAAAQAEAAYABAAAAAAAAQAFAAYABAAAAAAAAQAGAAYABAAAAAAAAQAHAAYABAAAAAAAAQAIAAYABAAAAAAAAQAJAAYABAAAAAAAAQACAAAABAAAAAAAAQACAAEABAAAAAAAAQACAAIABAAAAAAAAQACAAMABAAAAAAAAQADAAMABAAAAAAAAQAEAAMABAAAAAAAAQAFAAMABAAAAAAAAQAGAAMABAAAAAAAAQAGAAIABAAAAAAAAQAGAAEABAAAAAAAAQAGAAAABAAAAAAAAQAFAAAABAAAAAAAAQAEAAAABAAAAAAAAQADAAAABAAAAAAAAQADAAEABAAAAAAAAQAEAAEABAAAAAAAAQAFAAEABAAAAAAAAQAFAAIABAAAAAAAAQAEAAIABAAAAAAAAQADAAIABAAAAAAAAQAGAP//BAAAAAAAAQAFAP//BAAAAAAAAQAEAP//BAAAAAAAAQADAP//BAAAAAAAAQACAP//BAAAAAAAAQA=")
+tile_set = SubResource("TileSet_1f0c8")
+
+[node name="shop" parent="." node_paths=PackedStringArray("anchor") instance=ExtResource("10_i40h0")]
+anchor = NodePath("../units")
+
+[node name="Button" parent="shop" index="1"]
+offset_left = 182.5
+offset_top = -136.0
+offset_right = 248.5
+offset_bottom = -105.0
+
+[node name="units" type="Node2D" parent="."]
+y_sort_enabled = true
+script = ExtResource("11_2rdap")
+
+[connection signal="child_entered_tree" from="units" to="units" method="_on_child_entered_tree"]
+
+[editable path="shop"]

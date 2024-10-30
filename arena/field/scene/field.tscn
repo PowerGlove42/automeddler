@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://cdc0rghvu68oa"]
+
+[ext_resource type="PackedScene" uid="uid://d0r6wittxipuw" path="res://tools/scene/drop.tscn" id="1_41mpo"]
+
+[node name="field" type="Node2D"]
+
+[node name="border" type="Sprite2D" parent="."]
+
+[node name="anchor" type="Marker2D" parent="border"]
+
+[node name="drop" parent="." instance=ExtResource("1_41mpo")]
+
+[node name="CollisionShape2D" parent="drop/Area2D" index="0"]
+position = Vector2(0, -5)
+
+[editable path="drop"]

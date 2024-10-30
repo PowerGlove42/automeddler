@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://ixfhwpa5ttj7"]
+
+[ext_resource type="PackedScene" uid="uid://cdc0rghvu68oa" path="res://arena/field/scene/field.tscn" id="1_fh7eo"]
+[ext_resource type="Texture2D" uid="uid://boui83xw86kt6" path="res://arena/field/sprite/square_red.png" id="1_vfpq3"]
+
+[node name="field_red" type="Node2D"]
+
+[node name="field" parent="." instance=ExtResource("1_fh7eo")]
+
+[node name="border" parent="field" index="0"]
+texture = ExtResource("1_vfpq3")
+
+[editable path="field"]

@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://c0fiaa1s5gs2l"]
 
 [ext_resource type="Script" path="res://units/specific/script/based.gd" id="1_kan8q"]
-[ext_resource type="PackedScene" uid="uid://ck6moboc5utvp" path="res://units/scene/unit.tscn" id="1_yixbe"]
+[ext_resource type="PackedScene" uid="uid://ck6moboc5utvp" path="res://units/generic/scene/unit.tscn" id="1_yixbe"]
 [ext_resource type="Texture2D" uid="uid://dei4w7todbei8" path="res://units/specific/sprite/based.png" id="2_f28bw"]
-[ext_resource type="PackedScene" uid="uid://dreyq42dvw6a6" path="res://units/traits/warrior.tscn" id="3_fp5tq"]
-[ext_resource type="PackedScene" uid="uid://cm6xk73axqi4x" path="res://units/traits/ranged.tscn" id="4_4cl48"]
-[ext_resource type="PackedScene" uid="uid://c3ty3cg0p46qs" path="res://units/traits/melee.tscn" id="5_i85bk"]
+[ext_resource type="PackedScene" uid="uid://dreyq42dvw6a6" path="res://units/traits/scene/warrior.tscn" id="3_fp5tq"]
+[ext_resource type="PackedScene" uid="uid://cm6xk73axqi4x" path="res://units/traits/scene/ranged.tscn" id="4_4cl48"]
+[ext_resource type="PackedScene" uid="uid://c3ty3cg0p46qs" path="res://units/traits/scene/melee.tscn" id="5_i85bk"]
 
 [node name="based" type="Node2D"]
 script = ExtResource("1_kan8q")
