@@ -1,4 +1,3 @@
-extends Node2D
+extends "res://units/generic/script/unit_root.gd"
 
 var type = "juan"
-@onready var unit = $unit

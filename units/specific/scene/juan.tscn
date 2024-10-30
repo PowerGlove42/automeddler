@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://byhmyttv4hcky"]
+[gd_scene load_steps=8 format=3 uid="uid://byhmyttv4hcky"]
 
 [ext_resource type="PackedScene" uid="uid://ck6moboc5utvp" path="res://units/generic/scene/unit.tscn" id="1_k2nqy"]
 [ext_resource type="Script" path="res://units/specific/script/juan.gd" id="1_l0y1x"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c3ty3cg0p46qs" path="res://units/traits/scene/melee.tscn" id="3_ugchl"]
 [ext_resource type="PackedScene" uid="uid://dreyq42dvw6a6" path="res://units/traits/scene/warrior.tscn" id="4_03bxg"]
 [ext_resource type="PackedScene" uid="uid://cg8v4c46n5ju0" path="res://units/generic/scene/combat_unit.tscn" id="6_urdle"]
+[ext_resource type="Script" path="res://units/specific/script/combat_unit_juan.gd" id="7_2p7nd"]
 
 [node name="juan" type="Node2D"]
 y_sort_enabled = true
@@ -24,6 +25,7 @@ texture = ExtResource("2_mfslp")
 anchor = NodePath("../..")
 
 [node name="combat_unit" parent="." instance=ExtResource("6_urdle")]
+script = ExtResource("7_2p7nd")
 
 [editable path="unit"]
 [editable path="unit/drag"]
