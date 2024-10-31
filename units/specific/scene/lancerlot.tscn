@@ -28,12 +28,6 @@ anchor = NodePath("../..")
 script = ExtResource("7_ds6e0")
 anchor = NodePath("..")
 
-[node name="CheckButton" type="CheckButton" parent="."]
-offset_right = 44.0
-offset_bottom = 24.0
-
-[connection signal="toggled" from="CheckButton" to="." method="_on_check_button_toggled"]
-
 [editable path="unit"]
 [editable path="unit/drag"]
 [editable path="unit/info_panel"]

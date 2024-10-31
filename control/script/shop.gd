@@ -1,6 +1,7 @@
 extends Control
 
-@export var anchor:Node;
+@export var anchor:Node = self;
+@export var customer:Node = self;
 #var units = [];
 const juan = "res://control/scene/spawner_juan.tscn"
 const dog = "res://control/scene/spawner_dog.tscn"
@@ -26,6 +27,7 @@ func _ready() -> void:
 				offer = load(lancerlot);
 		offer_button = offer.instantiate()
 		offer_button.anchor = anchor;
+		offer_button.entity_owner = customer;
 		hbox.add_child(offer_button);
 
 

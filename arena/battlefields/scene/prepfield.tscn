@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://cugkn6x520ds7"]
+[gd_scene load_steps=17 format=4 uid="uid://cugkn6x520ds7"]
 
 [ext_resource type="Script" path="res://control/script/spawner.gd" id="1_m44g4"]
 [ext_resource type="PackedScene" uid="uid://dhtbesvuws2qk" path="res://control/scene/sell.tscn" id="2_qnw8a"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://ixfhwpa5ttj7" path="res://arena/field/scene/field_red.tscn" id="9_rln44"]
 [ext_resource type="PackedScene" uid="uid://drq5nh4oy01jo" path="res://control/scene/shop.tscn" id="10_i40h0"]
 [ext_resource type="Script" path="res://arena/battlefields/script/units.gd" id="11_2rdap"]
+[ext_resource type="PackedScene" uid="uid://bgomvbuklk2n1" path="res://player/scene/player.tscn" id="12_soe8s"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_qb3ui"]
 scenes/1/scene = ExtResource("3_qgc2b")
@@ -45,8 +46,9 @@ tile_set = SubResource("TileSet_nl6gu")
 tile_map_data = PackedByteArray("AAABAAYABAAAAAAAAQACAAYABAAAAAAAAQADAAYABAAAAAAAAQAEAAYABAAAAAAAAQAFAAYABAAAAAAAAQAGAAYABAAAAAAAAQAHAAYABAAAAAAAAQAIAAYABAAAAAAAAQAJAAYABAAAAAAAAQACAAAABAAAAAAAAQACAAEABAAAAAAAAQACAAIABAAAAAAAAQACAAMABAAAAAAAAQADAAMABAAAAAAAAQAEAAMABAAAAAAAAQAFAAMABAAAAAAAAQAGAAMABAAAAAAAAQAGAAIABAAAAAAAAQAGAAEABAAAAAAAAQAGAAAABAAAAAAAAQAFAAAABAAAAAAAAQAEAAAABAAAAAAAAQADAAAABAAAAAAAAQADAAEABAAAAAAAAQAEAAEABAAAAAAAAQAFAAEABAAAAAAAAQAFAAIABAAAAAAAAQAEAAIABAAAAAAAAQADAAIABAAAAAAAAQAGAP//BAAAAAAAAQAFAP//BAAAAAAAAQAEAP//BAAAAAAAAQADAP//BAAAAAAAAQACAP//BAAAAAAAAQA=")
 tile_set = SubResource("TileSet_1f0c8")
 
-[node name="shop" parent="." node_paths=PackedStringArray("anchor") instance=ExtResource("10_i40h0")]
+[node name="shop" parent="." node_paths=PackedStringArray("anchor", "customer") instance=ExtResource("10_i40h0")]
 anchor = NodePath("../units")
+customer = NodePath("../player")
 
 [node name="Button" parent="shop" index="1"]
 offset_left = 182.5
@@ -58,6 +60,29 @@ offset_bottom = -105.0
 y_sort_enabled = true
 script = ExtResource("11_2rdap")
 
+[node name="CheckButton" type="CheckButton" parent="."]
+offset_left = 165.0
+offset_top = 8.5
+offset_right = 209.0
+offset_bottom = 32.5
+
+[node name="player" parent="." node_paths=PackedStringArray("current_enemy") instance=ExtResource("12_soe8s")]
+current_enemy = NodePath("../enemy_player")
+
+[node name="enemy_player" parent="." node_paths=PackedStringArray("current_enemy", "combat_units") instance=ExtResource("12_soe8s")]
+player_name = "jacob wintermeyer"
+current_enemy = NodePath("../player")
+combat_units = [NodePath("based")]
+
+[node name="based" parent="enemy_player" node_paths=PackedStringArray("belonging_to") instance=ExtResource("3_qgc2b")]
+belonging_to = NodePath("..")
+
 [connection signal="child_entered_tree" from="units" to="units" method="_on_child_entered_tree"]
+[connection signal="pressed" from="CheckButton" to="CheckButton" method="_on_pressed"]
+[connection signal="toggled" from="CheckButton" to="units" method="_on_check_button_toggled"]
 
 [editable path="shop"]
+[editable path="enemy_player/based"]
+[editable path="enemy_player/based/unit"]
+[editable path="enemy_player/based/unit/drag"]
+[editable path="enemy_player/based/unit/info_panel"]

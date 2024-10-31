@@ -21,3 +21,9 @@ func check_child(node:Node):
 		combine(node, count[0], count[1]);
 		if node.unit.current_level == 1:
 			check_child(node);
+
+
+func _on_check_button_toggled(toggled_on: bool) -> void:
+	for i in get_children():
+		if i.has_method("combat_mode"):
+			i.combat_mode(toggled_on);

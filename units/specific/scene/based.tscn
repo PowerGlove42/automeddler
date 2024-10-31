@@ -24,8 +24,9 @@ texture = ExtResource("2_f28bw")
 [node name="drag" parent="unit" index="2" node_paths=PackedStringArray("anchor")]
 anchor = NodePath("../..")
 
-[node name="combat_unit" parent="." instance=ExtResource("7_rqqpw")]
+[node name="combat_unit" parent="." node_paths=PackedStringArray("anchor") instance=ExtResource("7_rqqpw")]
 script = ExtResource("8_0ua6f")
+anchor = NodePath("..")
 
 [editable path="unit"]
 [editable path="unit/drag"]
