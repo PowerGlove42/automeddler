@@ -1,3 +1,3 @@
-extends "res://units/generic/script/unit_root.gd"
+extends "res://units/generic/script/unit.gd"
 
 var type = "based"

@@ -1,33 +1,51 @@
-[gd_scene load_steps=8 format=3 uid="uid://byhmyttv4hcky"]
+[gd_scene load_steps=9 format=3 uid="uid://7etiv5etwr4n"]
 
-[ext_resource type="PackedScene" uid="uid://ck6moboc5utvp" path="res://units/generic/scene/unit.tscn" id="1_k2nqy"]
 [ext_resource type="Script" path="res://units/specific/script/juan.gd" id="1_l0y1x"]
-[ext_resource type="Texture2D" uid="uid://5unu031gjwsi" path="res://units/specific/sprite/juan.png" id="2_mfslp"]
-[ext_resource type="PackedScene" uid="uid://c3ty3cg0p46qs" path="res://units/traits/scene/melee.tscn" id="3_ugchl"]
-[ext_resource type="PackedScene" uid="uid://dreyq42dvw6a6" path="res://units/traits/scene/warrior.tscn" id="4_03bxg"]
-[ext_resource type="PackedScene" uid="uid://cg8v4c46n5ju0" path="res://units/generic/scene/combat_unit.tscn" id="6_urdle"]
-[ext_resource type="Script" path="res://units/specific/script/combat_unit_juan.gd" id="7_2p7nd"]
+[ext_resource type="PackedScene" uid="uid://bdis4c2xfx62w" path="res://tools/scene/drag.tscn" id="2_g5n61"]
+[ext_resource type="Texture2D" uid="uid://cfv3wp7xajfdu" path="res://units/generic/sprite/stars1.png" id="3_uqqp6"]
+[ext_resource type="PackedScene" uid="uid://do5n0pjc3q8yl" path="res://units/generic/scene/info_panel.tscn" id="4_y57bd"]
+[ext_resource type="PackedScene" uid="uid://b328ieplx140n" path="res://visuals/scene/sprite_animation.tscn" id="5_frn6l"]
+[ext_resource type="Texture2D" uid="uid://5unu031gjwsi" path="res://units/specific/sprite/juan.png" id="6_6t44u"]
+[ext_resource type="PackedScene" uid="uid://cg8v4c46n5ju0" path="res://units/generic/scene/combat_unit.tscn" id="6_jdxjs"]
 
-[node name="juan" type="Node2D"]
-y_sort_enabled = true
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eh57c"]
+radius = 6.0
+height = 14.0
+
+[node name="juan" type="Node2D" node_paths=PackedStringArray("combat_unit", "drag", "sprite", "info_panel")]
 script = ExtResource("1_l0y1x")
+combat_unit = NodePath("combat_unit")
+drag = NodePath("drag")
+sprite = NodePath("sprite_animation")
+info_panel = NodePath("info_panel")
 
-[node name="unit" parent="." instance=ExtResource("1_k2nqy")]
-attack = 10
-hp = 50
-text = "juan leaps into the enemie's backline"
-traits = Array[PackedScene]([ExtResource("3_ugchl"), ExtResource("4_03bxg")])
-
-[node name="Sprite2D" parent="unit" index="0"]
-texture = ExtResource("2_mfslp")
-
-[node name="drag" parent="unit" index="2" node_paths=PackedStringArray("anchor")]
-anchor = NodePath("../..")
-
-[node name="combat_unit" parent="." node_paths=PackedStringArray("anchor") instance=ExtResource("6_urdle")]
-script = ExtResource("7_2p7nd")
+[node name="drag" parent="." node_paths=PackedStringArray("anchor") instance=ExtResource("2_g5n61")]
 anchor = NodePath("..")
 
-[editable path="unit"]
-[editable path="unit/drag"]
-[editable path="unit/info_panel"]
+[node name="CollisionShape2D" parent="drag/Area2D" index="0"]
+position = Vector2(0, -4)
+shape = SubResource("CapsuleShape2D_eh57c")
+
+[node name="star" type="Sprite2D" parent="."]
+position = Vector2(0, -2)
+texture = ExtResource("3_uqqp6")
+hframes = 3
+
+[node name="info_panel" parent="." instance=ExtResource("4_y57bd")]
+visible = false
+position = Vector2(-29, -79)
+
+[node name="sprite_animation" parent="." instance=ExtResource("5_frn6l")]
+
+[node name="Sprite2D" parent="sprite_animation" index="0"]
+texture = ExtResource("6_6t44u")
+
+[node name="combat_unit" parent="." instance=ExtResource("6_jdxjs")]
+
+[connection signal="input_event" from="drag/Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_exited" from="drag/Area2D" to="." method="_on_area_2d_mouse_exited"]
+
+[editable path="drag"]
+[editable path="info_panel"]
+[editable path="sprite_animation"]
+[editable path="combat_unit"]

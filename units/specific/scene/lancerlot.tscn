@@ -1,34 +1,55 @@
-[gd_scene load_steps=8 format=3 uid="uid://fnlqno3kw3v2"]
+[gd_scene load_steps=11 format=3 uid="uid://b727l2g6r6m7f"]
 
-[ext_resource type="PackedScene" uid="uid://ck6moboc5utvp" path="res://units/generic/scene/unit.tscn" id="1_80q2m"]
 [ext_resource type="Script" path="res://units/specific/script/lancerlot.gd" id="1_ms20i"]
-[ext_resource type="Texture2D" uid="uid://bf7m4dcu62n3v" path="res://units/specific/sprite/lancerlot.png" id="2_0p1st"]
-[ext_resource type="PackedScene" uid="uid://c3ty3cg0p46qs" path="res://units/traits/scene/melee.tscn" id="3_ewfim"]
-[ext_resource type="PackedScene" uid="uid://dreyq42dvw6a6" path="res://units/traits/scene/warrior.tscn" id="4_5y7ek"]
-[ext_resource type="PackedScene" uid="uid://cg8v4c46n5ju0" path="res://units/generic/scene/combat_unit.tscn" id="6_157ua"]
-[ext_resource type="Script" path="res://units/specific/script/combat_unit_lancerlot.gd" id="7_ds6e0"]
+[ext_resource type="PackedScene" uid="uid://bdis4c2xfx62w" path="res://tools/scene/drag.tscn" id="2_ia5ik"]
+[ext_resource type="PackedScene" uid="uid://c3ty3cg0p46qs" path="res://units/traits/scene/melee.tscn" id="2_yw5i6"]
+[ext_resource type="PackedScene" uid="uid://dreyq42dvw6a6" path="res://units/traits/scene/warrior.tscn" id="3_ynd1j"]
+[ext_resource type="Texture2D" uid="uid://cfv3wp7xajfdu" path="res://units/generic/sprite/stars1.png" id="3_yotfi"]
+[ext_resource type="PackedScene" uid="uid://do5n0pjc3q8yl" path="res://units/generic/scene/info_panel.tscn" id="4_xc1ti"]
+[ext_resource type="PackedScene" uid="uid://b328ieplx140n" path="res://visuals/scene/sprite_animation.tscn" id="5_efbm6"]
+[ext_resource type="PackedScene" uid="uid://cg8v4c46n5ju0" path="res://units/generic/scene/combat_unit.tscn" id="6_qd0l6"]
+[ext_resource type="Texture2D" uid="uid://jt7glrcmug68" path="res://units/specific/sprite/lancerlot_sheet.png" id="8_mla4n"]
 
-[node name="lancerlot" type="Node2D"]
-y_sort_enabled = true
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eh57c"]
+radius = 6.0
+height = 14.0
+
+[node name="lancerlot" type="Node2D" node_paths=PackedStringArray("combat_unit", "drag", "sprite", "info_panel")]
 script = ExtResource("1_ms20i")
+combat_unit = NodePath("combat_unit")
+drag = NodePath("drag")
+sprite = NodePath("sprite_animation")
+info_panel = NodePath("info_panel")
+traits = Array[PackedScene]([ExtResource("2_yw5i6"), ExtResource("3_ynd1j")])
 
-[node name="unit" parent="." instance=ExtResource("1_80q2m")]
-attack = Array[int]([5, 15, 50])
-hp = Array[int]([50, 100, 150])
-text = Array[String](["level1", "level2", "level3"])
-traits = Array[PackedScene]([ExtResource("3_ewfim"), ExtResource("4_5y7ek")])
-
-[node name="Sprite2D" parent="unit" index="0"]
-texture = ExtResource("2_0p1st")
-
-[node name="drag" parent="unit" index="2" node_paths=PackedStringArray("anchor")]
-anchor = NodePath("../..")
-
-[node name="combat_unit" parent="." node_paths=PackedStringArray("anchor") instance=ExtResource("6_157ua")]
-script = ExtResource("7_ds6e0")
+[node name="drag" parent="." node_paths=PackedStringArray("anchor") instance=ExtResource("2_ia5ik")]
 anchor = NodePath("..")
 
-[editable path="unit"]
-[editable path="unit/drag"]
-[editable path="unit/info_panel"]
+[node name="CollisionShape2D" parent="drag/Area2D" index="0"]
+position = Vector2(0, -4)
+shape = SubResource("CapsuleShape2D_eh57c")
+
+[node name="star" type="Sprite2D" parent="."]
+position = Vector2(0, -2)
+texture = ExtResource("3_yotfi")
+hframes = 3
+
+[node name="info_panel" parent="." instance=ExtResource("4_xc1ti")]
+visible = false
+position = Vector2(-29, -79)
+
+[node name="sprite_animation" parent="." instance=ExtResource("5_efbm6")]
+
+[node name="Sprite2D" parent="sprite_animation" index="0"]
+texture = ExtResource("8_mla4n")
+hframes = 5
+
+[node name="combat_unit" parent="." instance=ExtResource("6_qd0l6")]
+
+[connection signal="input_event" from="drag/Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_exited" from="drag/Area2D" to="." method="_on_area_2d_mouse_exited"]
+
+[editable path="drag"]
+[editable path="info_panel"]
+[editable path="sprite_animation"]
 [editable path="combat_unit"]

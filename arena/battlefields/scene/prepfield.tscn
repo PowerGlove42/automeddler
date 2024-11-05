@@ -1,23 +1,88 @@
-[gd_scene load_steps=17 format=4 uid="uid://cugkn6x520ds7"]
+[gd_scene load_steps=33 format=4 uid="uid://cugkn6x520ds7"]
 
 [ext_resource type="Script" path="res://control/script/spawner.gd" id="1_m44g4"]
 [ext_resource type="PackedScene" uid="uid://dhtbesvuws2qk" path="res://control/scene/sell.tscn" id="2_qnw8a"]
-[ext_resource type="PackedScene" uid="uid://c0fiaa1s5gs2l" path="res://units/specific/scene/based.tscn" id="3_qgc2b"]
-[ext_resource type="PackedScene" uid="uid://dk5eiqb6587rn" path="res://units/specific/scene/dog.tscn" id="4_gs00y"]
-[ext_resource type="PackedScene" uid="uid://byhmyttv4hcky" path="res://units/specific/scene/juan.tscn" id="5_yv4kl"]
-[ext_resource type="PackedScene" uid="uid://fnlqno3kw3v2" path="res://units/specific/scene/lancerlot.tscn" id="6_tisqi"]
+[ext_resource type="PackedScene" uid="uid://6a6637tgkkpl" path="res://units/specific/scene/based.tscn" id="3_qgc2b"]
+[ext_resource type="Script" path="res://units/specific/script/based.gd" id="3_vlt0m"]
+[ext_resource type="PackedScene" uid="uid://ck6moboc5utvp" path="res://units/generic/scene/unit.tscn" id="6_gqrgj"]
+[ext_resource type="PackedScene" uid="uid://cm6xk73axqi4x" path="res://units/traits/scene/ranged.tscn" id="6_losfq"]
+[ext_resource type="PackedScene" uid="uid://c3ty3cg0p46qs" path="res://units/traits/scene/melee.tscn" id="7_62m11"]
 [ext_resource type="PackedScene" uid="uid://bd3fwtx5u7ar4" path="res://arena/field/scene/field_blue.tscn" id="7_v8e52"]
 [ext_resource type="PackedScene" uid="uid://di6fyv7268x5c" path="res://arena/field/scene/field_green.tscn" id="8_c6fvl"]
+[ext_resource type="PackedScene" uid="uid://dreyq42dvw6a6" path="res://units/traits/scene/warrior.tscn" id="8_qdstd"]
+[ext_resource type="Texture2D" uid="uid://dei4w7todbei8" path="res://units/specific/sprite/based.png" id="8_vt0g0"]
 [ext_resource type="PackedScene" uid="uid://ixfhwpa5ttj7" path="res://arena/field/scene/field_red.tscn" id="9_rln44"]
+[ext_resource type="PackedScene" uid="uid://cg8v4c46n5ju0" path="res://units/generic/scene/combat_unit.tscn" id="9_yud68"]
 [ext_resource type="PackedScene" uid="uid://drq5nh4oy01jo" path="res://control/scene/shop.tscn" id="10_i40h0"]
+[ext_resource type="Script" path="res://units/specific/script/combat_unit_lancerlot.gd" id="10_jusbk"]
+[ext_resource type="Script" path="res://units/specific/script/combat_unit_based.gd" id="10_xhiyt"]
 [ext_resource type="Script" path="res://arena/battlefields/script/units.gd" id="11_2rdap"]
+[ext_resource type="Script" path="res://units/specific/script/dog.gd" id="11_3323c"]
+[ext_resource type="Texture2D" uid="uid://c8dbm3dc3qjp" path="res://units/specific/sprite/dog.png" id="12_bb1jj"]
+[ext_resource type="Script" path="res://units/specific/script/juan.gd" id="12_og8tk"]
 [ext_resource type="PackedScene" uid="uid://bgomvbuklk2n1" path="res://player/scene/player.tscn" id="12_soe8s"]
+[ext_resource type="Script" path="res://units/specific/script/combat_unit_dog.gd" id="13_3h8nn"]
+[ext_resource type="Script" path="res://units/specific/script/combat_unit_juan.gd" id="13_oedti"]
+
+[sub_resource type="PackedScene" id="PackedScene_hsviu"]
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [NodePath("unit"), NodePath("unit/drag"), NodePath("unit/info_panel")],
+"names": PackedStringArray("based", "Node2D", "script", "unit", "attack", "hp", "text", "traits", "Sprite2D", "texture", "drag", "anchor", "combat_unit", "script", "anchor"),
+"node_count": 5,
+"node_paths": [NodePath("."), NodePath("./unit"), NodePath("./unit"), NodePath(".")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 2, 0, 0, 1073741824, 0, 2147483647, 3, 1, 4, 4, 2, 5, 3, 6, 4, 7, 5, 0, 1073741825, -1, 2147483647, 262152, -1, 1, 9, 6, 0, 1073741826, -1, 2147483647, 786442, -1, 1, 1073741835, 7, 0, 1073741827, 0, 2147483647, 12, 8, 2, 13, 9, 1073741838, 10, 0),
+"variants": [ExtResource("3_vlt0m"), ExtResource("6_gqrgj"), 12, 50, "Wow! this unit is ranged and melee at once!", Array[PackedScene]([ExtResource("8_qdstd"), ExtResource("6_losfq"), ExtResource("7_62m11")]), ExtResource("8_vt0g0"), NodePath("../.."), ExtResource("9_yud68"), ExtResource("10_xhiyt"), NodePath("..")],
+"version": 3
+}
+
+[sub_resource type="PackedScene" id="PackedScene_pnx88"]
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [NodePath("unit"), NodePath("unit/drag"), NodePath("unit/info_panel")],
+"names": PackedStringArray("dog", "Node2D", "y_sort_enabled", "script", "unit", "attack", "hp", "text", "traits", "Sprite2D", "texture", "drag", "anchor", "combat_unit", "script", "anchor"),
+"node_count": 5,
+"node_paths": [NodePath("."), NodePath("./unit"), NodePath("./unit"), NodePath(".")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 2, 2, 0, 3, 1, 0, 1073741824, 0, 2147483647, 4, 2, 4, 5, 3, 6, 4, 7, 5, 8, 6, 0, 1073741825, -1, 2147483647, 262153, -1, 1, 10, 7, 0, 1073741826, -1, 2147483647, 786443, -1, 1, 1073741836, 8, 0, 1073741827, 0, 2147483647, 13, 9, 2, 14, 10, 1073741839, 11, 0),
+"variants": [true, ExtResource("11_3323c"), ExtResource("6_gqrgj"), 10, 30, "he has a do", Array[PackedScene]([ExtResource("6_losfq"), ExtResource("8_qdstd")]), ExtResource("12_bb1jj"), NodePath("../.."), ExtResource("9_yud68"), ExtResource("13_3h8nn"), NodePath("..")],
+"version": 3
+}
+
+[sub_resource type="PackedScene" id="PackedScene_hvb51"]
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [NodePath("unit"), NodePath("unit/drag"), NodePath("unit/info_panel"), NodePath("unit/sprite_animation"), NodePath("unit/combat_unit")],
+"names": PackedStringArray("juan", "y_sort_enabled", "script", "Node2D", "unit", "attack", "hp", "text", "traits", "drag", "anchor", "Area2D", "CollisionShape2D", "Marker2D", "star", "info_panel", "TextureRect", "HFlowContainer", "level", "sprite_animation", "Sprite2D", "AnimationPlayer", "combat_unit"),
+"node_count": 4,
+"node_paths": [],
+"nodes": PackedInt32Array(-1, -1, 3, 0, -1, 2, 1, 0, 2, 1, 0, 0, 0, 2147483647, 4, 2, 4, 5, 3, 6, 4, 7, 5, 8, 6, 0, 1, -1, 2147483647, 262153, -1, 1, 1073741834, 7, 0, 0, 0, 2147483647, 22, 8, 2, 2, 9, 1073741834, 10, 0),
+"variants": [true, ExtResource("12_og8tk"), ExtResource("6_gqrgj"), Array[int]([10, 11, 12]), Array[int]([50, 60, 120]), Array[String](["no description, but level 1", "no discription but level 2", "no description, but level 3"]), Array[PackedScene]([ExtResource("7_62m11"), ExtResource("8_qdstd")]), NodePath("../.."), ExtResource("9_yud68"), ExtResource("13_oedti"), NodePath("..")],
+"version": 3
+}
+
+[sub_resource type="GDScript" id="GDScript_y325w"]
+
+[sub_resource type="PackedScene" id="PackedScene_asxq3"]
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [NodePath("unit"), NodePath("unit/drag"), NodePath("unit/info_panel"), NodePath("unit/sprite_animation"), NodePath("unit/combat_unit"), NodePath("combat_unit")],
+"names": PackedStringArray("lancerlot", "y_sort_enabled", "script", "Node2D", "unit", "attack", "hp", "text", "traits", "drag", "anchor", "Area2D", "CollisionShape2D", "Marker2D", "star", "info_panel", "TextureRect", "HFlowContainer", "level", "sprite_animation", "Sprite2D", "AnimationPlayer", "combat_unit"),
+"node_count": 4,
+"node_paths": [],
+"nodes": PackedInt32Array(-1, -1, 3, 0, -1, 2, 1, 0, 2, 1, 0, 0, 0, 2147483647, 4, 2, 4, 5, 3, 6, 4, 7, 5, 8, 6, 0, 1, -1, 2147483647, 262153, -1, 1, 1073741834, 7, 0, 0, 0, 2147483647, 22, 8, 2, 2, 9, 1073741834, 10, 0),
+"variants": [true, SubResource("GDScript_y325w"), ExtResource("6_gqrgj"), Array[int]([5, 15, 50]), Array[int]([50, 100, 150]), Array[String](["level1", "level2", "level3"]), Array[PackedScene]([ExtResource("7_62m11"), ExtResource("8_qdstd")]), NodePath("../.."), ExtResource("9_yud68"), ExtResource("10_jusbk"), NodePath("..")],
+"version": 3
+}
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_qb3ui"]
-scenes/1/scene = ExtResource("3_qgc2b")
-scenes/2/scene = ExtResource("4_gs00y")
-scenes/3/scene = ExtResource("5_yv4kl")
-scenes/4/scene = ExtResource("6_tisqi")
+scenes/1/scene = SubResource("PackedScene_hsviu")
+scenes/2/scene = SubResource("PackedScene_pnx88")
+scenes/3/scene = SubResource("PackedScene_hvb51")
+scenes/4/scene = SubResource("PackedScene_asxq3")
 
 [sub_resource type="TileSet" id="TileSet_nl6gu"]
 sources/0 = SubResource("TileSetScenesCollectionSource_qb3ui")
@@ -83,6 +148,7 @@ belonging_to = NodePath("..")
 
 [editable path="shop"]
 [editable path="enemy_player/based"]
-[editable path="enemy_player/based/unit"]
-[editable path="enemy_player/based/unit/drag"]
-[editable path="enemy_player/based/unit/info_panel"]
+[editable path="enemy_player/based/drag"]
+[editable path="enemy_player/based/info_panel"]
+[editable path="enemy_player/based/sprite_animation"]
+[editable path="enemy_player/based/combat_unit"]

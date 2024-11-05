@@ -1,8 +1,7 @@
 extends "res://units/generic/script/combat_unit.gd"
 
 func attack(target:Node):
-	print("i (", self,") attack -> ", target);
-
+	pass
 
 func _physics_process(delta: float) -> void:
 	match current_state:

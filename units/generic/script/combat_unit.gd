@@ -17,6 +17,7 @@ var move_speed:float = 1;
 var enemy_player:Node = null;
 var enemy_units:Array [Node];
 @export var anchor:Node = self;
+@export var animation_player:Node;
 
 func find_enemy_units() -> Array [Node]:
 	enemy_player = anchor.belonging_to.current_enemy;

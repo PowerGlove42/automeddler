@@ -4,16 +4,31 @@ enum level {
 	TWO,
 	THREE
 }
-@onready var drag = $drag;
+
+@export var combat_unit:Node;
+@export var belonging_to:Node;
+
+func combat_mode(in_combat:bool):
+	match in_combat:
+		true:
+			combat_unit.enable();
+			#unitdisable
+		false:
+			combat_unit.disable();
+			#unitenavle
+func new_owner(owner:Node):
+	belonging_to = owner;
+
+@export var drag:Node;
 @onready var stars = $star;
-@onready var sprite = $Sprite2D;
-@onready var info_panel = $info_panel;
+@export var sprite:Node;
+@export var info_panel:Node
 #stats to update
 var current_level = level.ONE
 #@export var attack:int = 0;
-@export var attack:Array [int];
-@export var hp:Array [int];
-@export var text:Array[String];
+@export var attack:Array [int] = [10, 11, 12];
+@export var hp:Array [int] = [50, 60, 120];
+@export var text:Array[String] = ["no description, but level 1", "no discription but level 2", "no description, but level 3"];
 @export var traits:Array[PackedScene];
 
 func enable():
@@ -27,6 +42,7 @@ func disable():
 	set_physics_process_internal(false);
 	drag.disable();
 
+
 func _ready() -> void:
 	drag.current_state = drag.states.HELD;
 	update_info();
@@ -36,7 +52,7 @@ func update_info():
 
 func goodbye():
 	drag.call_deferred("clean")
-	get_parent().call_deferred("queue_free");
+	call_deferred("queue_free");
 
 func level_up():
 	match current_level:

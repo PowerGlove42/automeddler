@@ -1,0 +1,47 @@
+[gd_scene load_steps=9 format=3 uid="uid://4nvbudne6ye5"]
+
+[ext_resource type="Script" path="res://units/generic/script/unit.gd" id="1_0soc7"]
+[ext_resource type="PackedScene" uid="uid://c3ty3cg0p46qs" path="res://units/traits/scene/melee.tscn" id="2_cnbby"]
+[ext_resource type="PackedScene" uid="uid://bdis4c2xfx62w" path="res://tools/scene/drag.tscn" id="2_tr6e7"]
+[ext_resource type="Texture2D" uid="uid://cfv3wp7xajfdu" path="res://units/generic/sprite/stars1.png" id="3_rnt0y"]
+[ext_resource type="PackedScene" uid="uid://b00udf7xlx7te" path="res://units/traits/scene/wizard.tscn" id="3_u7vs7"]
+[ext_resource type="PackedScene" uid="uid://do5n0pjc3q8yl" path="res://units/generic/scene/info_panel.tscn" id="4_2r8wg"]
+[ext_resource type="PackedScene" uid="uid://b328ieplx140n" path="res://visuals/scene/sprite_animation.tscn" id="5_ct7qd"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eh57c"]
+radius = 6.0
+height = 14.0
+
+[node name="finger" type="Node2D" node_paths=PackedStringArray("drag", "sprite", "info_panel")]
+script = ExtResource("1_0soc7")
+drag = NodePath("drag")
+sprite = NodePath("sprite_animation")
+info_panel = NodePath("info_panel")
+attack = Array[int]([12, 13, 4235])
+hp = Array[int]([12, 12, 13])
+text = Array[String](["bli", "bla", "blubb"])
+traits = Array[PackedScene]([ExtResource("2_cnbby"), ExtResource("3_u7vs7")])
+
+[node name="drag" parent="." instance=ExtResource("2_tr6e7")]
+
+[node name="CollisionShape2D" parent="drag/Area2D" index="0"]
+position = Vector2(0, -4)
+shape = SubResource("CapsuleShape2D_eh57c")
+
+[node name="star" type="Sprite2D" parent="."]
+position = Vector2(0, -2)
+texture = ExtResource("3_rnt0y")
+hframes = 3
+
+[node name="info_panel" parent="." instance=ExtResource("4_2r8wg")]
+visible = false
+position = Vector2(-29, -79)
+
+[node name="sprite_animation" parent="." instance=ExtResource("5_ct7qd")]
+
+[connection signal="input_event" from="drag/Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_exited" from="drag/Area2D" to="." method="_on_area_2d_mouse_exited"]
+
+[editable path="drag"]
+[editable path="info_panel"]
+[editable path="sprite_animation"]
