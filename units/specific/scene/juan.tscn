@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://7etiv5etwr4n"]
+[gd_scene load_steps=10 format=3 uid="uid://7etiv5etwr4n"]
 
 [ext_resource type="Script" path="res://units/specific/script/juan.gd" id="1_l0y1x"]
 [ext_resource type="PackedScene" uid="uid://bdis4c2xfx62w" path="res://tools/scene/drag.tscn" id="2_g5n61"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b328ieplx140n" path="res://visuals/scene/sprite_animation.tscn" id="5_frn6l"]
 [ext_resource type="Texture2D" uid="uid://5unu031gjwsi" path="res://units/specific/sprite/juan.png" id="6_6t44u"]
 [ext_resource type="PackedScene" uid="uid://cg8v4c46n5ju0" path="res://units/generic/scene/combat_unit.tscn" id="6_jdxjs"]
+[ext_resource type="Script" path="res://units/specific/script/combat_unit_juan.gd" id="8_uwgdw"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eh57c"]
 radius = 6.0
@@ -40,7 +41,10 @@ position = Vector2(-29, -79)
 [node name="Sprite2D" parent="sprite_animation" index="0"]
 texture = ExtResource("6_6t44u")
 
-[node name="combat_unit" parent="." instance=ExtResource("6_jdxjs")]
+[node name="combat_unit" parent="." node_paths=PackedStringArray("anchor", "animation_player") instance=ExtResource("6_jdxjs")]
+script = ExtResource("8_uwgdw")
+anchor = NodePath("..")
+animation_player = NodePath("../sprite_animation/AnimationPlayer")
 
 [connection signal="input_event" from="drag/Area2D" to="." method="_on_area_2d_input_event"]
 [connection signal="mouse_exited" from="drag/Area2D" to="." method="_on_area_2d_mouse_exited"]

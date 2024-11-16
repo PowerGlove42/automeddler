@@ -38,7 +38,9 @@ position = Vector2(-29, -79)
 
 [node name="sprite_animation" parent="." instance=ExtResource("5_degjl")]
 
-[node name="combat_unit" parent="." instance=ExtResource("6_0dins")]
+[node name="combat_unit" parent="." node_paths=PackedStringArray("anchor", "animation_player") instance=ExtResource("6_0dins")]
+anchor = NodePath("..")
+animation_player = NodePath("../sprite_animation")
 
 [connection signal="input_event" from="drag/Area2D" to="." method="_on_area_2d_input_event"]
 [connection signal="mouse_exited" from="drag/Area2D" to="." method="_on_area_2d_mouse_exited"]

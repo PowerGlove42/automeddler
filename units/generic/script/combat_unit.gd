@@ -36,11 +36,14 @@ func set_enemy_player(player:Node):
 func enable():
 	move_target = anchor.global_position;
 	enemy_units = find_enemy_units();
+	animation_player.stop();
 	current_state = states.MOVING;
 	set_physics_process_internal(true);
 
 func disable():
 	current_state = states.DISABLED;
+	animation_player.stop();
+	attack_target = null;
 	set_physics_process_internal(false);
 
 func move(target:Vector2):

@@ -1,7 +1,7 @@
 extends "res://units/generic/script/combat_unit.gd"
 
 func attack(target:Node):
-	pass
+	print(self, ": attacking")
 
 func _physics_process(delta: float) -> void:
 	match current_state:
@@ -12,6 +12,7 @@ func _physics_process(delta: float) -> void:
 			move(move_target);
 			print("I am moving", move_target)
 			if (anchor.global_position - move_target).length() < 30:
+				animation_player.play("attack")
 				current_state = states.ATTACKING;
 		states.ATTACKING:
 			attack(attack_target);

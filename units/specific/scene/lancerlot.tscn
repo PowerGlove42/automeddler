@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b727l2g6r6m7f"]
+[gd_scene load_steps=15 format=3 uid="uid://b727l2g6r6m7f"]
 
 [ext_resource type="Script" path="res://units/specific/script/lancerlot.gd" id="1_ms20i"]
 [ext_resource type="PackedScene" uid="uid://bdis4c2xfx62w" path="res://tools/scene/drag.tscn" id="2_ia5ik"]
@@ -9,10 +9,49 @@
 [ext_resource type="PackedScene" uid="uid://b328ieplx140n" path="res://visuals/scene/sprite_animation.tscn" id="5_efbm6"]
 [ext_resource type="PackedScene" uid="uid://cg8v4c46n5ju0" path="res://units/generic/scene/combat_unit.tscn" id="6_qd0l6"]
 [ext_resource type="Texture2D" uid="uid://jt7glrcmug68" path="res://units/specific/sprite/lancerlot_sheet.png" id="8_mla4n"]
+[ext_resource type="Script" path="res://units/specific/script/combat_unit_lancerlot.gd" id="10_i8k7c"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eh57c"]
 radius = 6.0
 height = 14.0
+
+[sub_resource type="Animation" id="Animation_7cofl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_8r8hr"]
+resource_name = "attack"
+loop_mode = 1
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [1, 2, 4, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qq8ww"]
+_data = {
+"RESET": SubResource("Animation_7cofl"),
+"attack": SubResource("Animation_8r8hr")
+}
 
 [node name="lancerlot" type="Node2D" node_paths=PackedStringArray("combat_unit", "drag", "sprite", "info_panel")]
 script = ExtResource("1_ms20i")
@@ -44,7 +83,15 @@ position = Vector2(-29, -79)
 texture = ExtResource("8_mla4n")
 hframes = 5
 
-[node name="combat_unit" parent="." instance=ExtResource("6_qd0l6")]
+[node name="AnimationPlayer" parent="sprite_animation" index="1"]
+libraries = {
+"": SubResource("AnimationLibrary_qq8ww")
+}
+
+[node name="combat_unit" parent="." node_paths=PackedStringArray("anchor", "animation_player") instance=ExtResource("6_qd0l6")]
+script = ExtResource("10_i8k7c")
+anchor = NodePath("..")
+animation_player = NodePath("../sprite_animation/AnimationPlayer")
 
 [connection signal="input_event" from="drag/Area2D" to="." method="_on_area_2d_input_event"]
 [connection signal="mouse_exited" from="drag/Area2D" to="." method="_on_area_2d_mouse_exited"]

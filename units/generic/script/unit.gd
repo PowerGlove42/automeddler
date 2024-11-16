@@ -6,16 +6,17 @@ enum level {
 }
 
 @export var combat_unit:Node;
-@export var belonging_to:Node;
+@export var belonging_to:Node = self;
 
 func combat_mode(in_combat:bool):
 	match in_combat:
 		true:
 			combat_unit.enable();
-			#unitdisable
+			drag.disable();
+			
 		false:
 			combat_unit.disable();
-			#unitenavle
+			drag.enable();
 func new_owner(owner:Node):
 	belonging_to = owner;
 
