@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://6a6637tgkkpl"]
+[gd_scene load_steps=10 format=3 uid="uid://6a6637tgkkpl"]
 
 [ext_resource type="Script" path="res://units/specific/script/based.gd" id="1_kan8q"]
 [ext_resource type="PackedScene" uid="uid://bdis4c2xfx62w" path="res://tools/scene/drag.tscn" id="2_dlhce"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://do5n0pjc3q8yl" path="res://units/generic/scene/info_panel.tscn" id="4_a48o0"]
 [ext_resource type="PackedScene" uid="uid://b328ieplx140n" path="res://visuals/scene/sprite_animation.tscn" id="5_oypfp"]
 [ext_resource type="PackedScene" uid="uid://cg8v4c46n5ju0" path="res://units/generic/scene/combat_unit.tscn" id="6_v8m6j"]
+[ext_resource type="Script" path="res://units/specific/script/combat_unit_based.gd" id="8_fosgq"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eh57c"]
 radius = 6.0
@@ -41,8 +42,9 @@ position = Vector2(-29, -79)
 texture = ExtResource("2_f28bw")
 
 [node name="combat_unit" parent="." node_paths=PackedStringArray("anchor", "animation_player") instance=ExtResource("6_v8m6j")]
+script = ExtResource("8_fosgq")
 anchor = NodePath("..")
-animation_player = NodePath("../sprite_animation")
+animation_player = NodePath("../sprite_animation/AnimationPlayer")
 
 [connection signal="input_event" from="drag/Area2D" to="." method="_on_area_2d_input_event"]
 [connection signal="mouse_exited" from="drag/Area2D" to="." method="_on_area_2d_mouse_exited"]
