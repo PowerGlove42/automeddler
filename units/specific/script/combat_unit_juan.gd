@@ -1,8 +1,26 @@
 extends "res://units/generic/script/combat_unit.gd"
 
+enum attack_states{
+	DASHING,
+	A_ATTACKING
+	}
+var current_attack_state = states.A_ATTACKING;
+
 func attack(target:Node):
-	if (anchor.global_position - target.global_position).length() > 50:
-		anchor.global_position += ((target.global_position - anchor.global_position).normalized() * 20) + (target.global_position - anchor.global_position);
+	#TODO: replace with state machine
+	match current_attack_state:
+		attack_states.DASHING:
+			pass;
+		#TODO: code for Dash
+		attack_states.A_ATTACKING:
+			pass;
+		#TODO: code for auto attacking
+
+	var dash_min_range = 70
+	var target_direction = (anchor.global_position - target.global_position).normalized();
+	var target_vector = anchor.global_position - target.global_position;
+	if target_vector.length() > 20:
+		anchor.global_position -= target_direction * 10; 
 	print("i", self,"attack", target);
 
 
